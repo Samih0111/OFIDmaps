@@ -1,0 +1,158 @@
+/* Atoll Summary Panel Styles */
+#atollSummaryPanel {
+    transition: all 0.3s ease-in-out;
+}
+
+#atollSummaryPanel.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+#atollSummaryPanel:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Atoll summary header styles */
+#atollSummaryPanel .bg-gradient-to-r {
+    position: relative;
+}
+
+#closeAtollPanel {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+}
+
+#closeAtollPanel:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Atoll summary table styles */
+#atollSummaryContent table {
+    border-collapse: collapse;
+}
+
+#atollSummaryContent th {
+    background-color: #f9fafb;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+#atollSummaryContent td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+#atollSummaryContent tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Status badge styles */
+#atollSummaryContent .bg-green-100 {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+#atollSummaryContent .bg-gray-100 {
+    background-color: #f3f4f6;
+    color: #6b7280;
+}
+
+#atollSummaryContent .bg-blue-100 {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+#atollSummaryContent .bg-orange-100 {
+    background-color: #fed7aa;
+    color: #c2410c;
+}
+
+#atollSummaryContent .bg-yellow-100 {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+/* Dropdown toggle button styles */
+.dropdown-toggle {
+    transition: all 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: #f3f4f6;
+}
+
+.dropdown-toggle svg {
+    transition: transform 0.2s ease;
+}
+
+/* Island details dropdown styles */
+.island-details {
+    transition: all 0.3s ease;
+}
+
+.island-details:not(.hidden) {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Project details cards */
+.island-details .bg-white {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.island-details .bg-white:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for dropdown */
+@media (max-width: 768px) {
+    .island-details .grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .dropdown-toggle {
+        padding: 0.375rem;
+    }
+    
+    .dropdown-toggle svg {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+}
+
+/* Responsive table */
+#atollSummaryContent .overflow-x-auto {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    #atollSummaryContent table {
+        font-size: 0.875rem;
+    }
+    
+    #atollSummaryContent th,
+    #atollSummaryContent td {
+        padding: 0.375rem 0.5rem;
+    }
+}

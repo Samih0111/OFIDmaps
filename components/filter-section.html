@@ -1,0 +1,122 @@
+<!-- Filter Section -->
+<section class="filter-section py-6">
+    <div class="container mx-auto px-4">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Filter Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                <!-- Funding Agency Filter -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex justify-between items-center mb-3">
+                        <label class="block text-sm font-medium text-gray-700">Funding Agency</label>
+                        <div class="flex gap-2">
+                            <button id="selectAllFunding" class="text-xs text-blue-600 hover:text-blue-800">Select All</button>
+                            <button id="unselectAllFunding" class="text-xs text-red-600 hover:text-red-800">Unselect All</button>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" id="funding-OFID" value="OFID" class="funding-checkbox mr-2 rounded">
+                            <span class="text-sm">OFID</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="funding-Government" value="GOV (PSIP)" class="funding-checkbox mr-2 rounded">
+                            <span class="text-sm">GOV (PSIP)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="funding-EXIM" value="EXIM (India)" class="funding-checkbox mr-2 rounded">
+                            <span class="text-sm">EXIM (India)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="funding-IDB" value="IDB" class="funding-checkbox mr-2 rounded">
+                            <span class="text-sm">IDB</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Phase Filter -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex justify-between items-center mb-3">
+                        <label class="block text-sm font-medium text-gray-700">Project Phase</label>
+                        <div class="flex gap-2">
+                            <button id="selectAllPhase" class="text-xs text-blue-600 hover:text-blue-800">Select All</button>
+                            <button id="unselectAllPhase" class="text-xs text-red-600 hover:text-red-800">Unselect All</button>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" id="phase-1" value="Phase 1" class="phase-checkbox mr-2 rounded">
+                            <span class="text-sm">Phase 1</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="phase-2" value="Phase 2" class="phase-checkbox mr-2 rounded">
+                            <span class="text-sm">Phase 2</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="phase-3" value="Phase 3" class="phase-checkbox mr-2 rounded">
+                            <span class="text-sm">Phase 3</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Project Type Filter -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex justify-between items-center mb-3">
+                        <label class="block text-sm font-medium text-gray-700">Project Type</label>
+                        <div class="flex gap-2">
+                            <button id="selectAllProjectType" class="text-xs text-blue-600 hover:text-blue-800">Select All</button>
+                            <button id="unselectAllProjectType" class="text-xs text-red-600 hover:text-red-800">Unselect All</button>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" id="project-water" value="water" class="project-type-checkbox mr-2 rounded">
+                            <span class="text-sm">Water Network</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="project-sewerage" value="sewerage" class="project-type-checkbox mr-2 rounded">
+                            <span class="text-sm">Sewerage Network</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="project-harbour" value="harbour" class="project-type-checkbox mr-2 rounded">
+                            <span class="text-sm">Harbour</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="project-desalination" value="desalination" class="project-type-checkbox mr-2 rounded">
+                            <span class="text-sm">Desalination Plant</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Special Filters -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <label class="block text-sm font-medium text-gray-700 mb-3">Special Filters</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" id="proposedFundingFilter" class="special-filter-checkbox mr-2">
+                            <span class="special-filter-circle proposed-funding"></span>
+                            <span class="text-sm ml-2">Proposed for Funding</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="ongoingHarborFilter" class="special-filter-checkbox mr-2">
+                            <span class="special-filter-circle ongoing-harbor"></span>
+                            <span class="text-sm ml-2">Ongoing Harbor Project</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="urbanCentersFilter" class="special-filter-checkbox mr-2">
+                            <span class="special-filter-circle urban-centers"></span>
+                            <span class="text-sm ml-2">Urban Centers</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Reset Button -->
+                <div class="flex items-end">
+                    <button id="resetFilters" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-md transition duration-200">
+                        Reset Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

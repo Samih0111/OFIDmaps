@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maldives Infrastructure Projects Map</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Modular CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/filters.css">
+    <link rel="stylesheet" href="css/components/statistics.css">
+    <link rel="stylesheet" href="css/components/atoll-summary.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Filter Section Container -->
+    <div id="filterContainer">
+        <!-- Filter component will be loaded here -->
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            
+            <!-- Map Section -->
+            <div class="lg:col-span-3">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-4 bg-gradient-to-r from-blue-500 to-blue-600">
+                        <h2 class="text-xl font-semibold text-white">Interactive Map</h2>
+                        <p class="text-blue-100">Click on markers for detailed project information</p>
+                    </div>
+                    
+                    <div id="map" class="relative">
+                        <div class="loading">
+                            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+                            <span class="ml-3 text-gray-600">Loading map...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1 space-y-6" id="statisticsContainer">
+                <!-- Statistics component will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Atoll Summary Container -->
+        <div id="atollSummaryContainer">
+            <!-- Atoll summary component will be loaded here -->
+        </div>
+    </main>
+
+    <!-- Modular JavaScript Files -->
+    <script src="js/component-loader.js"></script>
+    <script src="js/map-handler.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/statistics.js"></script>
+    <script src="js/atoll-summary.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PJF691EOpi65uVBZPf154HE2YYzS-vA&libraries=places" defer></script>
+</body>
+</html>
