@@ -13,21 +13,20 @@
 </head>
 <body class="bg-gray-50">
 
-    <!-- Filter Section Container -->
-    <div id="filterContainer">
-        <!-- Filter component will be loaded here -->
-    </div>
-
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-6">
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    <main class="w-full">
+        <div class="flex min-h-screen">
             
-            <!-- Map Section -->
-            <div class="lg:col-span-3">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- Left Sidebar - Filters (Fixed Width) -->
+            <div class="w-80 flex-shrink-0 p-4" id="filterContainer">
+                <!-- Filter component will be loaded here -->
+            </div>
+            
+            <!-- Map Section (Expandable) -->
+            <div class="flex-1 p-4">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
                     <div class="p-4 bg-gradient-to-r from-blue-500 to-blue-600">
-                        <h2 class="text-xl font-semibold text-white">Interactive Map</h2>
-                        <p class="text-blue-100">Click on markers for detailed project information</p>
+                        <h2 class="text-xl font-semibold text-white">Infrastructure Projects in the Maldives</h2>
                     </div>
                     
                     <div id="map" class="relative">
@@ -39,14 +38,14 @@
                 </div>
             </div>
 
-            <!-- Sidebar -->
-            <div class="lg:col-span-1 space-y-6" id="statisticsContainer">
+            <!-- Right Sidebar - Statistics (Fixed Width) -->
+            <div class="w-80 flex-shrink-0 p-4" id="statisticsContainer">
                 <!-- Statistics component will be loaded here -->
             </div>
         </div>
 
         <!-- Atoll Summary Container -->
-        <div id="atollSummaryContainer">
+        <div class="px-4 pb-4" id="atollSummaryContainer">
             <!-- Atoll summary component will be loaded here -->
         </div>
     </main>

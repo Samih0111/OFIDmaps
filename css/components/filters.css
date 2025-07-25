@@ -1,6 +1,9 @@
 /* Filter Section Styles */
 .filter-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 /* Filter checkboxes and buttons styles */
@@ -76,25 +79,16 @@
     color: #dc2626 !important;
 }
 
-/* Filter container responsive grid */
-.filter-section .grid {
-    gap: 1rem;
+/* Filter container - vertical layout for sidebar */
+.filter-section .space-y-4 > * + * {
+    margin-top: 1rem;
 }
 
-@media (max-width: 768px) {
-    .filter-section .grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    .filter-section .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .filter-section .grid {
-        grid-template-columns: repeat(5, 1fr);
+/* Responsive adjustments for mobile */
+@media (max-width: 1024px) {
+    .filter-section {
+        position: static;
+        max-height: none;
+        overflow-y: visible;
     }
 }

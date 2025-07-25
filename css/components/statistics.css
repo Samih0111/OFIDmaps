@@ -4,26 +4,28 @@
     backdrop-filter: blur(10px);
 }
 
-/* Legend styles */
+/* Legend styles - compressed */
 .legend-item {
     display: flex;
     align-items: center;
-    margin: 5px 0;
+    margin: 2px 0;
 }
 
 .legend-color {
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    margin-right: 10px;
-    border: 2px solid white;
+    margin-right: 6px;
+    border: 1px solid white;
+    flex-shrink: 0;
 }
 
-/* Atoll button styles */
+/* Atoll button styles - compressed */
 .atoll-btn {
     transition: all 0.2s ease;
-    font-size: 0.875rem;
-    min-width: 3rem;
+    font-size: 0.75rem;
+    min-width: 2.5rem;
+    padding: 0.25rem 0.5rem;
 }
 
 .atoll-btn:hover {
@@ -45,11 +47,11 @@
     }
 }
 
-/* Statistics grid responsive */
+/* Statistics grid responsive - compressed */
 #atollButtons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
+    gap: 0.25rem;
 }
 
 @media (max-width: 640px) {
