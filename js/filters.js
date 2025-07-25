@@ -6,42 +6,28 @@ const FilterManager = {
     setupEventListeners() {
         console.log('Setting up filter event listeners...');
         
-        // Wait for elements to be available, retry if needed
-        const maxRetries = 5;
-        let retryCount = 0;
+        // Funding agency checkboxes
+        const fundingCheckboxes = document.querySelectorAll('.funding-checkbox');
+        console.log('Found funding checkboxes:', fundingCheckboxes.length);
+        fundingCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', this.applyFilters.bind(this));
+        });
         
-        const setupWithRetry = () => {
-            console.log(`Setup attempt ${retryCount + 1}/${maxRetries}`);
-            
-            // Funding agency checkboxes
-            const fundingCheckboxes = document.querySelectorAll('.funding-checkbox');
-            console.log('Found funding checkboxes:', fundingCheckboxes.length);
-            
-            if (fundingCheckboxes.length === 0 && retryCount < maxRetries - 1) {
-                retryCount++;
-                setTimeout(setupWithRetry, 300);
-                return;
-            }
-            
-            fundingCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', this.applyFilters.bind(this));
-            });
-            
-            // Phase checkboxes
-            document.querySelectorAll('.phase-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', this.applyFilters.bind(this));
-            });
-            
-            // Project type checkboxes
-            document.querySelectorAll('.project-type-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', this.applyFilters.bind(this));
-            });
-            
-            this.setupSpecialFilters();
-            this.setupControlButtons();
-        };
+        // Phase checkboxes
+        document.querySelectorAll('.phase-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', this.applyFilters.bind(this));
+        });
         
-        setupWithRetry();
+        // Project type checkboxes
+        document.querySelectorAll('.project-type-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', this.applyFilters.bind(this));
+        });
+        
+        this.setupSpecialFilters();
+        this.setupControlButtons();
+        
+        // Test that elements are found
+        this.testFilterElements();
     },
     
     // Setup special filters separately
@@ -104,23 +90,41 @@ const FilterManager = {
     
     // Setup control buttons separately  
     setupControlButtons() {
-        // Select/Unselect all buttons
-        document.getElementById('selectAllFunding').addEventListener('click', () => this.toggleAllCheckboxes('.funding-checkbox', true));
-        document.getElementById('unselectAllFunding').addEventListener('click', () => this.toggleAllCheckboxes('.funding-checkbox', false));
+        // Select/Unselect all buttons with error handling
+        const selectAllFunding = document.getElementById('selectAllFunding');
+        const unselectAllFunding = document.getElementById('unselectAllFunding');
+        const selectAllPhase = document.getElementById('selectAllPhase');
+        const unselectAllPhase = document.getElementById('unselectAllPhase');
+        const selectAllProjectType = document.getElementById('selectAllProjectType');
+        const unselectAllProjectType = document.getElementById('unselectAllProjectType');
+        const resetFilters = document.getElementById('resetFilters');
         
-        document.getElementById('selectAllPhase').addEventListener('click', () => this.toggleAllCheckboxes('.phase-checkbox', true));
-        document.getElementById('unselectAllPhase').addEventListener('click', () => this.toggleAllCheckboxes('.phase-checkbox', false));
-        
-        document.getElementById('selectAllProjectType').addEventListener('click', () => this.toggleAllCheckboxes('.project-type-checkbox', true));
-        document.getElementById('unselectAllProjectType').addEventListener('click', () => this.toggleAllCheckboxes('.project-type-checkbox', false));
-        
-        // Reset button
-        document.getElementById('resetFilters').addEventListener('click', this.resetFilters.bind(this));
+        if (selectAllFunding) selectAllFunding.addEventListener('click', () => this.toggleAllCheckboxes('.funding-checkbox', true));
+        if (unselectAllFunding) unselectAllFunding.addEventListener('click', () => this.toggleAllCheckboxes('.funding-checkbox', false));
+        if (selectAllPhase) selectAllPhase.addEventListener('click', () => this.toggleAllCheckboxes('.phase-checkbox', true));
+        if (unselectAllPhase) unselectAllPhase.addEventListener('click', () => this.toggleAllCheckboxes('.phase-checkbox', false));
+        if (selectAllProjectType) selectAllProjectType.addEventListener('click', () => this.toggleAllCheckboxes('.project-type-checkbox', true));
+        if (unselectAllProjectType) unselectAllProjectType.addEventListener('click', () => this.toggleAllCheckboxes('.project-type-checkbox', false));
+        if (resetFilters) resetFilters.addEventListener('click', this.resetFilters.bind(this));
     },
 
     // Helper function to get checked checkbox values
     getCheckedValues(selector) {
-        return Array.from(document.querySelectorAll(selector + ':checked')).map(cb => cb.value);
+        const checkboxes = document.querySelectorAll(selector + ':checked');
+        return Array.from(checkboxes).map(cb => cb.value);
+    },
+    
+    // Test function to verify elements exist
+    testFilterElements() {
+        console.log('=== TESTING FILTER ELEMENTS ===');
+        console.log('Funding checkboxes:', document.querySelectorAll('.funding-checkbox').length);
+        console.log('Phase checkboxes:', document.querySelectorAll('.phase-checkbox').length);
+        console.log('Project type checkboxes:', document.querySelectorAll('.project-type-checkbox').length);
+        console.log('Special filter elements:', {
+            proposed: !!document.getElementById('proposedFundingFilter'),
+            harbor: !!document.getElementById('ongoingHarborFilter'), 
+            urban: !!document.getElementById('urbanCentersFilter')
+        });
     },
     
     // Helper function to toggle all checkboxes
@@ -146,30 +150,24 @@ const FilterManager = {
             urbanCenters: urbanCentersFilter ? urbanCentersFilter.checked : false
         };
         
-        console.log('=== APPLYING FILTERS ===');
-        console.log('Filter criteria:', criteria);
-        console.log('Filter elements state:', {
-            proposedFundingFilter: proposedFundingFilter ? proposedFundingFilter.checked : 'element not found',
-            ongoingHarborFilter: ongoingHarborFilter ? ongoingHarborFilter.checked : 'element not found',
-            urbanCentersFilter: urbanCentersFilter ? urbanCentersFilter.checked : 'element not found'
-        });
-        
-        console.log('Applying filters:', criteria);
-        console.log('window.mapHandler exists:', !!window.mapHandler);
-        console.log('window.mapHandler object:', window.mapHandler);
+        console.log('Applying filters with criteria:', criteria);
         
         // Apply filters through map handler
-        if (window.mapHandler) {
+        if (window.mapHandler && typeof window.mapHandler.filterMarkers === 'function') {
             console.log('Calling mapHandler.filterMarkers...');
-            window.mapHandler.filterMarkers(criteria);
-            
-            // Update statistics with filtered data
-            if (window.StatisticsManager) {
-                const filteredData = window.mapHandler.getFilteredIslands();
-                window.StatisticsManager.updateStatistics(filteredData);
+            try {
+                window.mapHandler.filterMarkers(criteria);
+                
+                // Update statistics with filtered data
+                if (window.StatisticsManager && typeof window.mapHandler.getFilteredIslands === 'function') {
+                    const filteredData = window.mapHandler.getFilteredIslands();
+                    window.StatisticsManager.updateStatistics(filteredData);
+                }
+            } catch (error) {
+                console.error('Error applying filters:', error);
             }
         } else {
-            console.error('mapHandler not found!');
+            console.error('mapHandler not found or filterMarkers method missing!', !!window.mapHandler);
         }
     },
 
@@ -206,3 +204,14 @@ const FilterManager = {
 
 // Export for global access
 window.FilterManager = FilterManager;
+
+// Add a global test function
+window.testFilters = function() {
+    console.log('=== MANUAL FILTER TEST ===');
+    if (window.FilterManager) {
+        window.FilterManager.testFilterElements();
+        console.log('FilterManager found and test completed');
+    } else {
+        console.error('FilterManager not found');
+    }
+};

@@ -81,13 +81,17 @@ async function initializeApp() {
         // Step 4: Setup all modules
         setupAllModules();
         
-        // Step 5: Initialize event listeners after short delay to ensure DOM is ready
+        // Step 5: Initialize event listeners after components are loaded
         setTimeout(() => {
+            console.log('Attempting to set up filter event listeners...');
             if (window.FilterManager) {
+                console.log('FilterManager found, setting up listeners...');
                 window.FilterManager.setupEventListeners();
                 console.log('Filter event listeners set up');
+            } else {
+                console.error('FilterManager not found!');
             }
-        }, 200);
+        }, 500);
         
         console.log('Application initialized successfully');
         

@@ -31,23 +31,23 @@ const StatisticsManager = {
         // Calculate project counts respecting funding agency filters
         const activeProjects = {
             water: dataToUse.filter(island => {
-                const project = island.projects.water;
-                if (!project.funding) return false;
+                const project = island.projects && island.projects.water;
+                if (!project || !project.funding) return false;
                 return selectedFundingAgencies ? selectedFundingAgencies.includes(project.funding) : true;
             }).length,
             sewerage: dataToUse.filter(island => {
-                const project = island.projects.sewerage;
-                if (!project.funding) return false;
+                const project = island.projects && island.projects.sewerage;
+                if (!project || !project.funding) return false;
                 return selectedFundingAgencies ? selectedFundingAgencies.includes(project.funding) : true;
             }).length,
             harbour: dataToUse.filter(island => {
-                const project = island.projects.harbour;
-                if (!project.funding) return false;
+                const project = island.projects && island.projects.harbour;
+                if (!project || !project.funding) return false;
                 return selectedFundingAgencies ? selectedFundingAgencies.includes(project.funding) : true;
             }).length,
             desalination: dataToUse.filter(island => {
-                const project = island.projects.desalination;
-                if (!project.funding) return false;
+                const project = island.projects && island.projects.desalination;
+                if (!project || !project.funding) return false;
                 return selectedFundingAgencies ? selectedFundingAgencies.includes(project.funding) : true;
             }).length
         };

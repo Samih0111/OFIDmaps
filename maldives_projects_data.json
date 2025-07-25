@@ -51,9 +51,9 @@
       },
       "projects": {
         "water_network": {
-          "funding": null,
-          "phase": null,
-          "status": null,
+          "funding": "OFID",
+          "phase": "Phase 1",
+          "status": "Completed",
           "network_length_m": null,
           "connections_nos": null,
           "tanks_m3": null
@@ -102,16 +102,16 @@
           "tanks_m3": null
         },
         "sewerage_network": {
-          "funding": null,
-          "phase": null,
-          "status": null,
+          "funding": "GOV (PSIP)",
+          "phase": "Phase 2",
+          "status": "Ongoing",
           "network_length_m": null,
           "connections": null
         },
         "harbour": {
-          "funding": null,
-          "phase": null,
-          "status": null,
+          "funding": "EXIM (India)",
+          "phase": "Phase 1",
+          "status": "Completed",
           "info": null
         },
         "desalination_plant": {
@@ -137,9 +137,9 @@
       },
       "projects": {
         "water_network": {
-          "funding": null,
-          "phase": null,
-          "status": null,
+          "funding": "IDB",
+          "phase": "Phase 3",
+          "status": "Planned",
           "network_length_m": null,
           "connections_nos": null,
           "tanks_m3": null
@@ -158,9 +158,9 @@
           "info": null
         },
         "desalination_plant": {
-          "funding": null,
-          "phase": null,
-          "status": null
+          "funding": "IDB",
+          "phase": "Phase 2",
+          "status": "Ongoing"
         },
         "proposed_for_funding": null,
         "ongoing_harbor_project": null,

@@ -87,11 +87,13 @@ class MapHandler {
     // Get funding agencies for an island
     getFundingAgenciesForIsland(island) {
         const agencies = new Set();
-        Object.values(island.projects).forEach(project => {
-            if (project.funding && project.funding !== null) {
-                agencies.add(project.funding);
-            }
-        });
+        if (island.projects) {
+            Object.values(island.projects).forEach(project => {
+                if (project && project.funding && project.funding !== null && project.funding !== '') {
+                    agencies.add(project.funding);
+                }
+            });
+        }
         return Array.from(agencies);
     }
 
@@ -182,7 +184,7 @@ class MapHandler {
             // Filter by phase (if any phases are selected)
             if (criteria.phase.length > 0) {
                 const hasPhase = Object.values(island.projects)
-                    .some(project => project.funding === markerFundingAgency && 
+                    .some(project => project && project.funding === markerFundingAgency && 
                                    project.phase && criteria.phase.includes(project.phase));
                 if (!hasPhase) showMarker = false;
             }
@@ -253,7 +255,7 @@ class MapHandler {
                 // Filter by phase
                 if (this.currentFilter.phase.length > 0) {
                     const hasPhase = Object.values(island.projects)
-                        .some(project => project.funding === agency && 
+                        .some(project => project && project.funding === agency && 
                                        project.phase && this.currentFilter.phase.includes(project.phase));
                     if (!hasPhase) showForThisAgency = false;
                 }
