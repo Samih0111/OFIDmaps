@@ -1,8 +1,8 @@
 <!-- Combined Statistics Panel -->
-<div class="bg-white rounded-lg shadow-lg p-4">
+<div class="bg-white rounded-lg shadow-lg p-4 h-full flex flex-col">
     <!-- Project Statistics -->
-    <div class="mb-4">
-        <h3 class="text-md font-semibold text-gray-800 mb-2">Project Statistics</h3>
+    <div class="mb-8">
+        <h3 class="text-md font-semibold text-gray-800 mb-7">Project Statistics</h3>
         <div id="statsContent">
             <div class="animate-pulse">
                 <div class="h-4 bg-gray-200 rounded mb-2"></div>
@@ -13,8 +13,8 @@
     </div>
 
     <!-- Funding Agencies (2 columns) -->
-    <div class="mb-4">
-        <h3 class="text-md font-semibold text-gray-800 mb-2">Funding Agencies</h3>
+    <div class="mb-8">
+        <h3 class="text-md font-semibold text-gray-800 mb-7">Funding Agencies</h3>
         <div id="legendContent" class="grid grid-cols-2 gap-x-2 gap-y-1">
             <div class="legend-item">
                 <div class="legend-color" style="background-color: #007bff;"></div>
@@ -36,9 +36,9 @@
     </div>
 
     <!-- Browse by Atoll -->
-    <div>
-        <h3 class="text-md font-semibold text-gray-800 mb-2">Browse by Atoll</h3>
-        <div id="atollButtons" class="grid grid-cols-4 gap-1">
+    <div class="flex-1 flex flex-col">
+        <h3 class="text-md font-semibold text-gray-800 mb-7">Browse by Atoll</h3>
+        <div id="atollButtons" class="grid grid-cols-4 gap-1 flex-1 content-start">
             <!-- Atoll buttons will be generated dynamically -->
         </div>
     </div>

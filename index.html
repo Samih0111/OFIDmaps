@@ -15,21 +15,21 @@
 
     <!-- Main Content -->
     <main class="w-full">
-        <div class="flex min-h-screen">
+        <div class="flex" style="height: calc(100vh - 2rem);">
             
             <!-- Left Sidebar - Filters (Fixed Width) -->
-            <div class="w-80 flex-shrink-0 p-4" id="filterContainer">
+            <div class="w-80 flex-shrink-0 p-4 h-full" id="filterContainer">
                 <!-- Filter component will be loaded here -->
             </div>
             
             <!-- Map Section (Expandable) -->
-            <div class="flex-1 p-4">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
-                    <div class="p-4 bg-gradient-to-r from-blue-500 to-blue-600">
+            <div class="flex-1 p-4 h-full">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                    <div class="p-4 bg-gradient-to-r from-blue-500 to-blue-600 flex-shrink-0">
                         <h2 class="text-xl font-semibold text-white">Infrastructure Projects in the Maldives</h2>
                     </div>
                     
-                    <div id="map" class="relative">
+                    <div id="map" class="relative flex-1">
                         <div class="loading">
                             <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
                             <span class="ml-3 text-gray-600">Loading map...</span>
@@ -39,7 +39,7 @@
             </div>
 
             <!-- Right Sidebar - Statistics (Fixed Width) -->
-            <div class="w-80 flex-shrink-0 p-4" id="statisticsContainer">
+            <div class="w-80 flex-shrink-0 p-4 h-full" id="statisticsContainer">
                 <!-- Statistics component will be loaded here -->
             </div>
         </div>
