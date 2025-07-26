@@ -46,9 +46,6 @@ function transformJsonData(jsonIslands) {
         proposedForFunding: island.projects.proposed_for_funding || "",
         ongoingHarborProject: island.projects.ongoing_harbor_project || "",
         urbanCenters: island.projects.urban_centers || "",
-        projects: {
-            ...island.projects
-        },
         area_sq_km: island.area_sq_km
     })).filter(island => island.coordinates.lat && island.coordinates.lng); // Only include islands with valid coordinates
 }

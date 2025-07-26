@@ -84,11 +84,156 @@
     margin-top: 1rem;
 }
 
+/* Collapsible filter sections for mobile */
+.filter-group {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.filter-group-header {
+    background-color: #f9fafb;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #374151;
+    transition: background-color 0.2s ease;
+}
+
+.filter-group-header:hover {
+    background-color: #f3f4f6;
+}
+
+.filter-group-content {
+    padding: 1rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.filter-group-content.collapsed {
+    display: none;
+}
+
+.filter-toggle-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.filter-toggle-icon.rotated {
+    transform: rotate(180deg);
+}
+
+/* Mobile toggle button */
+.mobile-filter-toggle {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-filter-toggle:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.mobile-filter-toggle:active {
+    transform: scale(0.95);
+}
+
 /* Responsive adjustments for mobile */
 @media (max-width: 1024px) {
     .filter-section {
-        position: static;
-        max-height: none;
-        overflow-y: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 999;
+        max-height: 80vh;
+        overflow-y: auto;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .filter-section.mobile-visible {
+        transform: translateY(0);
+    }
+    
+    .mobile-filter-toggle {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Compact spacing for mobile */
+    .filter-group-header {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    .filter-group-content {
+        padding: 0.75rem;
+    }
+    
+    /* Smaller checkboxes and text for mobile */
+    .filter-section label {
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem 0;
+    }
+    
+    .special-filter-circle {
+        width: 14px;
+        height: 14px;
+        min-width: 14px;
+        min-height: 14px;
+    }
+}
+
+/* Ensure mobile button shows on smaller screens */
+@media (max-width: 1023px) {
+    .mobile-filter-toggle {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: all !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .filter-section {
+        max-height: 70vh;
+    }
+    
+    .filter-group-header {
+        padding: 0.5rem;
+        font-size: 0.8125rem;
+    }
+    
+    .filter-group-content {
+        padding: 0.5rem;
+    }
+    
+    .filter-section label {
+        font-size: 0.8125rem;
+        padding: 0.1875rem 0;
     }
 }

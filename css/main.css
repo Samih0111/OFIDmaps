@@ -66,7 +66,7 @@
     height: 100%;
 }
 
-/* Responsive adjustments */
+/* Mobile layout reorganization */
 @media (max-width: 1024px) {
     .flex {
         flex-direction: column;
@@ -76,12 +76,77 @@
         width: 100%;
     }
     
+    /* Hide filter sidebar on mobile - it becomes overlay */
+    #filterContainer {
+        display: none;
+    }
+    
+    /* Statistics container spans full width */
+    #statisticsContainer {
+        order: -1;
+        width: 100%;
+        padding: 0.5rem;
+    }
+    
+    /* Map container adjustments */
     #map {
-        height: 400px;
+        height: calc(100vh - 300px);
+        min-height: 400px;
     }
     
     .loading {
-        height: 400px;
+        height: calc(100vh - 300px);
+        min-height: 400px;
+    }
+    
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .py-6 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    /* Ensure main content has no horizontal padding on mobile */
+    main .flex {
+        padding: 0;
+    }
+    
+    main .flex > div {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    #statisticsContainer {
+        padding: 0;
+        margin: 0;
+    }
+    
+    #map {
+        height: calc(100vh - 250px);
+        min-height: 350px;
+    }
+    
+    .loading {
+        height: calc(100vh - 250px);
+        min-height: 350px;
+    }
+    
+    .container {
+        padding: 0 0.25rem;
+    }
+    
+    .py-6 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    
+    /* Make map container have minimal padding */
+    main .flex > div:not(#statisticsContainer) {
+        padding: 0.25rem;
     }
 }
 

@@ -25,6 +25,8 @@ const FilterManager = {
         
         this.setupSpecialFilters();
         this.setupControlButtons();
+        this.setupMobileFilters();
+        this.setupCollapsibleFilters();
         
         // Test that elements are found
         this.testFilterElements();
@@ -86,6 +88,54 @@ const FilterManager = {
                 this.applyFilters();
             });
         }
+    },
+    
+    // Setup mobile filter functionality
+    setupMobileFilters() {
+        const mobileToggle = document.querySelector('.mobile-filter-toggle');
+        const filterSection = document.querySelector('.filter-section');
+        const mobileClose = document.querySelector('.mobile-filter-close');
+        
+        if (mobileToggle && filterSection) {
+            mobileToggle.addEventListener('click', () => {
+                filterSection.classList.toggle('mobile-visible');
+            });
+        }
+        
+        if (mobileClose && filterSection) {
+            mobileClose.addEventListener('click', () => {
+                filterSection.classList.remove('mobile-visible');
+            });
+        }
+        
+        // Close filters when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024 && 
+                filterSection && 
+                filterSection.classList.contains('mobile-visible') &&
+                !filterSection.contains(e.target) && 
+                !mobileToggle.contains(e.target)) {
+                filterSection.classList.remove('mobile-visible');
+            }
+        });
+    },
+    
+    // Setup collapsible filter sections
+    setupCollapsibleFilters() {
+        const filterHeaders = document.querySelectorAll('.filter-group-header');
+        
+        filterHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const targetId = header.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                const icon = header.querySelector('.filter-toggle-icon');
+                
+                if (content && icon) {
+                    content.classList.toggle('collapsed');
+                    icon.classList.toggle('rotated');
+                }
+            });
+        });
     },
     
     // Setup control buttons separately  

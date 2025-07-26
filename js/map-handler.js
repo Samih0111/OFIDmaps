@@ -126,35 +126,102 @@ class MapHandler {
             .filter(([key, project]) => project.funding)
             .map(([type, project]) => {
                 const isHighlighted = project.funding === focusFundingAgency;
-                const highlightStyle = isHighlighted ? 'bg-yellow-100 border-l-4 border-yellow-500 pl-2' : '';
+                const highlightStyle = isHighlighted ? 'bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 shadow-sm' : 'bg-gray-50';
+                
+                // Get project type icon
+                const getProjectIcon = (type) => {
+                    switch(type) {
+                        case 'water': return '💧';
+                        case 'sewerage': return '🚰';
+                        case 'harbour': return '⚓';
+                        case 'desalination': return '🏭';
+                        default: return '🏗️';
+                    }
+                };
+
+                // Get status color
+                const getStatusColor = (status) => {
+                    switch(status?.toLowerCase()) {
+                        case 'completed': return 'text-green-600 bg-green-100';
+                        case 'ongoing': return 'text-blue-600 bg-blue-100';
+                        case 'planned': return 'text-orange-600 bg-orange-100';
+                        default: return 'text-gray-600 bg-gray-100';
+                    }
+                };
+
                 return `
-                    <div class="mb-2 ${highlightStyle}">
-                        <strong>${type.charAt(0).toUpperCase() + type.slice(1).replace('_', ' ')}:</strong><br>
-                        Funding: ${project.funding}<br>
-                        Phase: ${project.phase || 'N/A'}<br>
-                        Status: ${project.status || 'N/A'}
+                    <div class="mb-3 p-3 rounded-lg ${highlightStyle} transition-all duration-200 hover:shadow-md">
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg mr-2">${getProjectIcon(type)}</span>
+                            <h5 class="font-semibold text-gray-800">${type.charAt(0).toUpperCase() + type.slice(1).replace('_', ' ')}</h5>
+                        </div>
+                        <div class="space-y-1 text-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Funding:</span>
+                                <span class="font-medium text-gray-800 bg-white px-2 py-1 rounded text-xs">${project.funding}</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Phase:</span>
+                                <span class="font-medium text-gray-700">${project.phase || 'N/A'}</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Status:</span>
+                                <span class="px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}">${project.status || 'N/A'}</span>
+                            </div>
+                        </div>
                     </div>
                 `;
             }).join('');
 
         const content = `
-            <div class="p-3 max-w-sm">
-                <h3 class="font-bold text-lg mb-2">${island.locality}</h3>
-                <p class="text-sm text-gray-600 mb-2">
-                    <strong>Atoll:</strong> ${island.atoll}<br>
-                    <strong>Population:</strong> ${island.population?.toLocaleString() || 'N/A'}
-                </p>
+            <div class="p-4 max-w-sm bg-white rounded-lg shadow-lg">
+                <div class="border-b pb-3 mb-3">
+                    <h3 class="font-bold text-xl text-gray-800 mb-1">${island.locality}</h3>
+                    <div class="flex items-center text-sm text-gray-600 space-x-4">
+                        <span class="flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                            ${island.atoll} Atoll
+                        </span>
+                        <span class="flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            ${island.population?.toLocaleString() || 'N/A'} people
+                        </span>
+                    </div>
+                </div>
                 ${focusFundingAgency ? `
-                    <div class="mb-2 text-sm bg-blue-50 p-2 rounded">
-                        <strong>Showing projects for:</strong> ${focusFundingAgency}
+                    <div class="mb-3 p-2 bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-200 rounded-lg">
+                        <div class="flex items-center text-sm">
+                            <svg class="w-4 h-4 mr-2 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-indigo-700 font-medium">Showing projects for: ${focusFundingAgency}</span>
+                        </div>
                     </div>
                 ` : ''}
                 ${activeProjects ? `
-                    <div class="border-t pt-2">
-                        <h4 class="font-semibold mb-2">Active Projects:</h4>
-                        ${activeProjects}
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
+                            </svg>
+                            Projects
+                        </h4>
+                        <div class="space-y-2">
+                            ${activeProjects}
+                        </div>
                     </div>
-                ` : '<p class="text-gray-500 italic">No active projects</p>'}
+                ` : `
+                    <div class="text-center py-6">
+                        <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                        <p class="text-gray-500 italic">No projects available</p>
+                    </div>
+                `}
             </div>
         `;
 

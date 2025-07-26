@@ -146,13 +146,73 @@
     overflow-x: auto;
 }
 
-@media (max-width: 768px) {
+/* Enhanced mobile responsiveness */
+@media (max-width: 1024px) {
+    #atollSummaryPanel {
+        margin: 0.5rem;
+    }
+    
     #atollSummaryContent table {
         font-size: 0.875rem;
     }
     
-    #atollSummaryContent th,
+    #atollSummaryContent th {
+        font-size: 0.6875rem;
+        padding: 0.375rem 0.75rem;
+    }
+    
+    #atollSummaryContent td {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #atollSummaryPanel {
+        margin: 0.25rem;
+    }
+    
+    #atollSummaryContent table {
+        font-size: 0.8125rem;
+    }
+    
+    #atollSummaryContent th {
+        font-size: 0.625rem;
+        padding: 0.25rem 0.5rem;
+        letter-spacing: 0.025em;
+    }
+    
     #atollSummaryContent td {
         padding: 0.375rem 0.5rem;
+        font-size: 0.8125rem;
+    }
+    
+    .island-details .grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .island-details .bg-white {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 640px) {
+    #atollSummaryContent table {
+        font-size: 0.75rem;
+    }
+    
+    #atollSummaryContent th {
+        font-size: 0.5625rem;
+        padding: 0.25rem 0.375rem;
+    }
+    
+    #atollSummaryContent td {
+        padding: 0.25rem 0.375rem;
+        font-size: 0.75rem;
+    }
+    
+    .island-details .bg-white {
+        padding: 0.5rem;
     }
 }
