@@ -14,52 +14,27 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <div>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="funding-OFID" value="OFID" class="funding-checkbox mr-2 rounded">
+                            <span class="text-sm font-medium">OFID</span>
+                        </label>
+                        
+                        <!-- Project Phase Filter (Sub-section of OFID) -->
+                        <div class="ml-4 space-y-2">
                             <label class="flex items-center">
-                                <input type="checkbox" id="funding-OFID" value="OFID" class="funding-checkbox mr-2 rounded">
-                                <span class="text-sm font-medium">OFID</span>
+                                <input type="checkbox" id="phase-1" value="Phase 1" class="phase-checkbox mr-2 rounded">
+                                <span class="text-sm">Phase 1</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="phase-2" value="Phase 2" class="phase-checkbox mr-2 rounded">
+                                <span class="text-sm">Phase 2</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="phase-3" value="Phase 3" class="phase-checkbox mr-2 rounded">
+                                <span class="text-sm">Phase 3</span>
                             </label>
                         </div>
                         
-                        <!-- Project Phase Filter (Sub-section of OFID) -->
-                        <div class="bg-gray-50 p-4 rounded-lg ml-4">
-                            <div class="flex justify-between items-center mb-3">
-                                <label class="block text-sm font-medium text-gray-700">Project Phase</label>
-                                <div class="flex gap-2">
-                                    <button id="selectAllPhase" class="text-xs text-blue-600 hover:text-blue-800">Select All</button>
-                                    <button id="unselectAllPhase" class="text-xs text-red-600 hover:text-red-800">Unselect All</button>
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" id="phase-1" value="Phase 1" class="phase-checkbox mr-2 rounded">
-                                    <span class="text-sm">Phase 1</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" id="phase-2" value="Phase 2" class="phase-checkbox mr-2 rounded">
-                                    <span class="text-sm">Phase 2</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" id="phase-3" value="Phase 3" class="phase-checkbox mr-2 rounded">
-                                    <span class="text-sm">Phase 3</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div>
-                        <label class="flex items-center">
-                            <input type="checkbox" id="funding-Government" value="GOV (PSIP)" class="funding-checkbox mr-2 rounded">
-                            <span class="text-sm">GOV (PSIP)</span>
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" id="funding-EXIM" value="EXIM (India)" class="funding-checkbox mr-2 rounded">
-                            <span class="text-sm">EXIM (India)</span>
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" id="funding-IDB" value="IDB" class="funding-checkbox mr-2 rounded">
-                            <span class="text-sm">IDB</span>
-                        </label>
-                        </div>
                         <label class="flex items-center">
                             <input type="checkbox" id="funding-Government" value="GOV (PSIP)" class="funding-checkbox mr-2 rounded">
                             <span class="text-sm">GOV (PSIP)</span>
