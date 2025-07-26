@@ -23,7 +23,7 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    border: 2px solid;
+    border: 3px solid;
     background: transparent;
     display: inline-block;
     cursor: pointer;
@@ -31,6 +31,7 @@
     min-width: 16px;
     min-height: 16px;
     flex-shrink: 0;
+    position: relative;
 }
 
 .special-filter-circle.proposed-funding {
@@ -43,26 +44,30 @@
 
 .special-filter-circle.urban-centers {
     border-color: #8b5cf6; /* Purple */
-    border-width: 3px; /* Make it more visible for debugging */
 }
 
-/* When checkbox is checked, fill the circle */
-.special-filter-checkbox:checked + .special-filter-circle.proposed-funding {
+/* When checkbox is checked, fill the circle - using manual class since checkbox is hidden */
+.special-filter-circle.proposed-funding.checked {
     background-color: #10b981;
 }
 
-.special-filter-checkbox:checked + .special-filter-circle.ongoing-harbor {
+.special-filter-circle.ongoing-harbor.checked {
     background-color: #f59e0b;
 }
 
-.special-filter-checkbox:checked + .special-filter-circle.urban-centers {
+.special-filter-circle.urban-centers.checked {
     background-color: #8b5cf6;
 }
 
 /* Hover effects for special filter circles */
 .special-filter-circle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-width: 4px;
+}
+
+.special-filter-circle:active {
+    transform: scale(0.9);
 }
 
 /* Select all/unselect all button styles */

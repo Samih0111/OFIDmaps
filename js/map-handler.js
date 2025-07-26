@@ -6,6 +6,11 @@ class MapHandler {
         this.markers = [];
         this.infoWindow = null;
         this.currentFilter = { funding: [], phase: [], projectType: [], proposedForFunding: false, ongoingHarbor: false, urbanCenters: false };
+        this.specialFilterOverlays = {
+            proposedForFunding: [],
+            ongoingHarbor: [],
+            urbanCenters: []
+        };
     }
 
     // Initialize Google Maps
@@ -229,7 +234,120 @@ class MapHandler {
         this.infoWindow.open(this.map, marker);
     }
 
-    // Filter markers based on criteria
+    // Create circle overlays for special filters
+    createSpecialFilterOverlays(filterType, islands) {
+        console.log(`🔵 Creating ${filterType} overlays for ${islands.length} islands`);
+        
+        // Clear existing overlays for this filter type
+        this.clearSpecialFilterOverlays(filterType);
+        
+        const colors = {
+            proposedForFunding: '#10b981', // Green
+            ongoingHarbor: '#f59e0b',      // Amber  
+            urbanCenters: '#8b5cf6'        // Purple
+        };
+        
+        let successCount = 0;
+        let failCount = 0;
+        
+        islands.forEach(island => {
+            // Check both coordinate formats (lat/lng and latitude/longitude)
+            const lat = island.coordinates?.lat || island.coordinates?.latitude;
+            const lng = island.coordinates?.lng || island.coordinates?.longitude;
+            
+            if (lat && lng && !isNaN(lat) && !isNaN(lng)) {
+                
+                const circle = new google.maps.Circle({
+                    strokeColor: colors[filterType],
+                    strokeOpacity: 0.8,
+                    strokeWeight: 3,
+                    fillColor: colors[filterType],
+                    fillOpacity: 0.15,
+                    map: this.map,
+                    center: { lat: lat, lng: lng },
+                    radius: 2000, // 2km radius
+                    clickable: true
+                });
+                
+                // Add info window for the circle
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `
+                        <div class="p-2">
+                            <h3 class="font-bold text-lg">${island.locality}</h3>
+                            <p class="text-sm text-gray-600">Atoll: ${island.atoll}</p>
+                            <p class="text-sm text-gray-600">Population: ${island.population || 'N/A'}</p>
+                            <p class="text-sm font-medium text-green-600 mt-2">
+                                ${filterType === 'proposedForFunding' ? 'Proposed for Funding' : 
+                                  filterType === 'ongoingHarbor' ? 'Ongoing Harbor Project' : 
+                                  'Urban Center'}
+                            </p>
+                        </div>
+                    `
+                });
+                
+                circle.addListener('click', () => {
+                    infoWindow.setPosition(circle.getCenter());
+                    infoWindow.open(this.map);
+                });
+                
+                this.specialFilterOverlays[filterType].push(circle);
+                successCount++;
+            } else {
+                console.warn(`Missing or invalid coordinates for island: ${island.locality}`, {
+                    coordinates: island.coordinates,
+                    lat: lat,
+                    lng: lng
+                });
+                failCount++;
+            }
+        });
+        
+        console.log(`✅ ${filterType} overlays created: ${successCount} successful, ${failCount} failed`);
+    }
+    
+    // Clear overlays for a specific filter type
+    clearSpecialFilterOverlays(filterType) {
+        this.specialFilterOverlays[filterType].forEach(overlay => {
+            overlay.setMap(null);
+        });
+        this.specialFilterOverlays[filterType] = [];
+    }
+    
+    // Clear all special filter overlays
+    clearAllSpecialFilterOverlays() {
+        Object.keys(this.specialFilterOverlays).forEach(filterType => {
+            this.clearSpecialFilterOverlays(filterType);
+        });
+    }
+    
+    // Get islands that match special filter criteria
+    getSpecialFilterIslands(filterType) {
+        if (!window.islandData) return [];
+        
+        return window.islandData.filter(island => {
+            switch (filterType) {
+                case 'proposedForFunding':
+                    // Check if proposedForFunding field equals "yes" or "Yes" (case insensitive)
+                    return island.proposedForFunding && 
+                           island.proposedForFunding.toLowerCase() === 'yes';
+                           
+                case 'ongoingHarbor':
+                    // Check if ongoingHarborProject field equals "yes" or "Yes" (case insensitive)
+                    return island.ongoingHarborProject && 
+                           island.ongoingHarborProject.toLowerCase() === 'yes';
+                           
+                case 'urbanCenters':
+                    // Check if urbanCenters field equals "yes" or "Yes" (case insensitive)
+                    return island.urbanCenters && 
+                           island.urbanCenters.toLowerCase() === 'yes';
+                           
+                default:
+                    return false;
+            }
+        });
+    }
+
+    // Filter markers based on criteria (regular filters only - no special filters)
     filterMarkers(criteria) {
         this.currentFilter = criteria;
         console.log('Filtering markers with criteria:', criteria);
@@ -241,6 +359,8 @@ class MapHandler {
             const markerFundingAgency = marker.fundingAgency;
             let showMarker = true;
 
+            // Apply regular filters only (ignore special filter criteria)
+            
             // Filter by funding agency (if any agencies are selected)
             if (criteria.funding.length > 0) {
                 if (!criteria.funding.includes(markerFundingAgency)) {
@@ -269,27 +389,6 @@ class MapHandler {
                 if (!hasProjectType) showMarker = false;
             }
 
-            // Filter by proposed for funding
-            if (criteria.proposedForFunding) {
-                const hasProposedFunding = (island.proposedForFunding && island.proposedForFunding.toLowerCase() === 'yes') ||
-                    (island.projects && island.projects.proposed_for_funding && island.projects.proposed_for_funding.toLowerCase() === 'yes');
-                if (!hasProposedFunding) showMarker = false;
-            }
-            
-            // Filter by ongoing harbor project
-            if (criteria.ongoingHarbor) {
-                const hasOngoingHarbor = (island.ongoingHarborProject && island.ongoingHarborProject.toLowerCase() === 'yes') ||
-                    (island.projects && island.projects.ongoing_harbor_project && island.projects.ongoing_harbor_project.toLowerCase() === 'yes');
-                if (!hasOngoingHarbor) showMarker = false;
-            }
-            
-            // Filter by urban centers
-            if (criteria.urbanCenters) {
-                const isUrbanCenter = (island.urbanCenters && island.urbanCenters.toLowerCase() === 'yes') ||
-                    (island.projects && island.projects.urban_centers && island.projects.urban_centers.toLowerCase() === 'yes');
-                if (!isUrbanCenter) showMarker = false;
-            }
-
             marker.setVisible(showMarker);
             if (showMarker) visibleCount++;
         });
@@ -302,70 +401,80 @@ class MapHandler {
         if (!window.islandData) return [];
         
         return window.islandData.filter(island => {
-            // Check if island should be shown based on current filter criteria
-            let shouldShow = false;
+            // Check if any special filters are active
+            const hasSpecialFilters = this.currentFilter.proposedForFunding || this.currentFilter.ongoingHarbor || this.currentFilter.urbanCenters;
             
-            // Get funding agencies for this island
-            const fundingAgencies = this.getFundingAgenciesForIsland(island);
-            
-            // Check each funding agency to see if any marker for this island would be visible
-            fundingAgencies.forEach(agency => {
-                let showForThisAgency = true;
+            if (hasSpecialFilters) {
+                // Special filters work independently - show island if it matches ANY special filter
+                let matchesSpecialFilter = false;
                 
-                // Filter by funding agency
-                if (this.currentFilter.funding.length > 0) {
-                    if (!this.currentFilter.funding.includes(agency)) {
-                        showForThisAgency = false;
-                    }
-                }
-                
-                // Filter by phase
-                if (this.currentFilter.phase.length > 0) {
-                    const hasPhase = Object.values(island.projects)
-                        .some(project => project && project.funding === agency && 
-                                       project.phase && this.currentFilter.phase.includes(project.phase));
-                    if (!hasPhase) showForThisAgency = false;
-                }
-                
-                // Filter by project type
-                if (this.currentFilter.projectType.length > 0) {
-                    const hasProjectType = this.currentFilter.projectType.some(projectType => {
-                        const project = island.projects[projectType];
-                        return project && project.funding === agency && 
-                               (project.funding && project.funding !== null || 
-                                project.phase && project.phase !== null || 
-                                project.status && project.status !== null);
-                    });
-                    if (!hasProjectType) showForThisAgency = false;
-                }
-                
-                // Filter by proposed for funding
+                // Check proposed for funding
                 if (this.currentFilter.proposedForFunding) {
-                    const hasProposedFunding = (island.proposedForFunding && island.proposedForFunding.toLowerCase() === 'yes') ||
-                        (island.projects && island.projects.proposed_for_funding && island.projects.proposed_for_funding.toLowerCase() === 'yes');
-                    if (!hasProposedFunding) showForThisAgency = false;
+                    const hasProposedFunding = island.proposedForFunding && 
+                                             island.proposedForFunding.toLowerCase() === 'yes';
+                    if (hasProposedFunding) matchesSpecialFilter = true;
                 }
                 
-                // Filter by ongoing harbor project
+                // Check ongoing harbor project
                 if (this.currentFilter.ongoingHarbor) {
-                    const hasOngoingHarbor = (island.ongoingHarborProject && island.ongoingHarborProject.toLowerCase() === 'yes') ||
-                        (island.projects && island.projects.ongoing_harbor_project && island.projects.ongoing_harbor_project.toLowerCase() === 'yes');
-                    if (!hasOngoingHarbor) showForThisAgency = false;
+                    const hasOngoingHarbor = island.ongoingHarborProject && 
+                                           island.ongoingHarborProject.toLowerCase() === 'yes';
+                    if (hasOngoingHarbor) matchesSpecialFilter = true;
                 }
                 
-                // Filter by urban centers
+                // Check urban centers
                 if (this.currentFilter.urbanCenters) {
-                    const isUrbanCenter = (island.urbanCenters && island.urbanCenters.toLowerCase() === 'yes') ||
-                        (island.projects && island.projects.urban_centers && island.projects.urban_centers.toLowerCase() === 'yes');
-                    if (!isUrbanCenter) showForThisAgency = false;
+                    const isUrbanCenter = island.urbanCenters && 
+                                        island.urbanCenters.toLowerCase() === 'yes';
+                    if (isUrbanCenter) matchesSpecialFilter = true;
                 }
                 
-                if (showForThisAgency) {
-                    shouldShow = true;
-                }
-            });
-            
-            return shouldShow;
+                return matchesSpecialFilter;
+            } else {
+                // No special filters active, apply regular filters
+                let shouldShow = false;
+                
+                // Get funding agencies for this island
+                const fundingAgencies = this.getFundingAgenciesForIsland(island);
+                
+                // Check each funding agency to see if any marker for this island would be visible
+                fundingAgencies.forEach(agency => {
+                    let showForThisAgency = true;
+                    
+                    // Filter by funding agency
+                    if (this.currentFilter.funding.length > 0) {
+                        if (!this.currentFilter.funding.includes(agency)) {
+                            showForThisAgency = false;
+                        }
+                    }
+                    
+                    // Filter by phase
+                    if (this.currentFilter.phase.length > 0) {
+                        const hasPhase = Object.values(island.projects)
+                            .some(project => project && project.funding === agency && 
+                                           project.phase && this.currentFilter.phase.includes(project.phase));
+                        if (!hasPhase) showForThisAgency = false;
+                    }
+                    
+                    // Filter by project type
+                    if (this.currentFilter.projectType.length > 0) {
+                        const hasProjectType = this.currentFilter.projectType.some(projectType => {
+                            const project = island.projects[projectType];
+                            return project && project.funding === agency && 
+                                   (project.funding && project.funding !== null || 
+                                    project.phase && project.phase !== null || 
+                                    project.status && project.status !== null);
+                        });
+                        if (!hasProjectType) showForThisAgency = false;
+                    }
+                    
+                    if (showForThisAgency) {
+                        shouldShow = true;
+                    }
+                });
+                
+                return shouldShow;
+            }
         });
     }
 
@@ -374,6 +483,9 @@ class MapHandler {
         this.currentFilter = { funding: [], phase: [], projectType: [], proposedForFunding: false, ongoingHarbor: false, urbanCenters: false };
         this.markers.forEach(marker => marker.setVisible(true));
         this.infoWindow.close();
+        
+        // Clear all special filter overlays
+        this.clearAllSpecialFilterOverlays();
     }
 
     // Focus on specific atoll

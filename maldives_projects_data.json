@@ -4,37 +4,37 @@
     "description": "Water, Sewerage, Harbour, and Desalination projects across Maldives islands",
     "total_islands": 951,
     "coordinates_info": {
-      "extracted_from_maps": 48,
-      "estimated_from_atoll": 128,
-      "missing": 775
+      "extracted_from_maps": 91,
+      "estimated_from_atoll": 90,
+      "missing": 770
     },
     "funding_agencies": [
-      "OFID",
       "EXIM (India)",
-      "GOV (PSIP)",
-      "IDB"
+      "IDB",
+      "OFID",
+      "GOV (PSIP)"
     ],
     "atolls": [
-      "R",
-      "Adh",
-      "L",
-      "B",
-      "Sh",
       "HA",
-      "Lh",
-      "S",
-      "HDh",
+      "AA",
+      "GA",
       "V",
       "Th",
-      "M",
-      "K",
-      "AA",
+      "Dh",
+      "HDh",
+      "Adh",
       "GDh",
       "Gn",
       "N",
-      "GA",
-      "Dh",
-      "F"
+      "K",
+      "R",
+      "S",
+      "L",
+      "F",
+      "Sh",
+      "B",
+      "M",
+      "Lh"
     ]
   },
   "islands": [
@@ -45,15 +45,15 @@
       "area_sq_km": 2.5,
       "map_link": null,
       "coordinates": {
-        "latitude": 6.7788894438746174,
-        "longitude": 73.08892199213798,
+        "latitude": 6.804992754767605,
+        "longitude": 73.06929299872426,
         "source": "estimated"
       },
       "projects": {
         "water_network": {
-          "funding": "OFID",
-          "phase": "Phase 1",
-          "status": "Completed",
+          "funding": null,
+          "phase": null,
+          "status": null,
           "network_length_m": null,
           "connections_nos": null,
           "tanks_m3": null
@@ -76,7 +76,7 @@
           "phase": null,
           "status": null
         },
-        "proposed_for_funding": "yes",
+        "proposed_for_funding": null,
         "ongoing_harbor_project": null,
         "urban_centers": null
       }
@@ -86,10 +86,10 @@
       "locality": "Dhidhdhoo",
       "population": 3412,
       "area_sq_km": 0.97,
-      "map_link": null,
+      "map_link": "6.8870529266955725, 73.11538194897979",
       "coordinates": {
-        "latitude": 6.836123933417515,
-        "longitude": 73.12444100147488,
+        "latitude": 6.8870529266955725,
+        "longitude": 73.11538194897979,
         "source": "estimated"
       },
       "projects": {
@@ -102,17 +102,17 @@
           "tanks_m3": null
         },
         "sewerage_network": {
-          "funding": "GOV (PSIP)",
-          "phase": "Phase 2",
-          "status": "Ongoing",
+          "funding": null,
+          "phase": null,
+          "status": null,
           "network_length_m": null,
           "connections": null
         },
         "harbour": {
-          "funding": "EXIM (India)",
-          "phase": "Phase 1",
-          "status": "Completed",
-          "info": null
+          "funding": "GOV (PSIP)",
+          "phase": null,
+          "status": "In progress",
+          "info": "92% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -131,15 +131,15 @@
       "area_sq_km": 2.66,
       "map_link": null,
       "coordinates": {
-        "latitude": 6.779149824893351,
-        "longitude": 73.06479045760324,
+        "latitude": 6.819136770840096,
+        "longitude": 73.12837938673069,
         "source": "estimated"
       },
       "projects": {
         "water_network": {
-          "funding": "IDB",
-          "phase": "Phase 3",
-          "status": "Planned",
+          "funding": null,
+          "phase": null,
+          "status": null,
           "network_length_m": null,
           "connections_nos": null,
           "tanks_m3": null
@@ -158,13 +158,13 @@
           "info": null
         },
         "desalination_plant": {
-          "funding": "IDB",
-          "phase": "Phase 2",
-          "status": "Ongoing"
+          "funding": null,
+          "phase": null,
+          "status": null
         },
         "proposed_for_funding": null,
         "ongoing_harbor_project": null,
-        "urban_centers": "yes"
+        "urban_centers": null
       }
     },
     {
@@ -215,10 +215,10 @@
       "locality": "Ihavandhoo",
       "population": 2873,
       "area_sq_km": 0.63,
-      "map_link": null,
+      "map_link": "6.953626994786922, 72.92568933104097",
       "coordinates": {
-        "latitude": 6.7604247615574895,
-        "longitude": 73.08660398717376,
+        "latitude": 6.953626994786922,
+        "longitude": 72.92568933104097,
         "source": "estimated"
       },
       "projects": {
@@ -238,10 +238,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -249,7 +249,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -260,8 +260,8 @@
       "area_sq_km": 2.03,
       "map_link": null,
       "coordinates": {
-        "latitude": 6.776321533186022,
-        "longitude": 73.09599365790928,
+        "latitude": 6.792632356322455,
+        "longitude": 73.1021250622017,
         "source": "estimated"
       },
       "projects": {
@@ -301,10 +301,10 @@
       "locality": "Maarandhoo",
       "population": 668,
       "area_sq_km": 0.45,
-      "map_link": null,
+      "map_link": "6.851580294151139, 72.98424811527252",
       "coordinates": {
-        "latitude": 6.75175828935999,
-        "longitude": 73.08063486985297,
+        "latitude": 6.851580294151139,
+        "longitude": 72.98424811527252,
         "source": "estimated"
       },
       "projects": {
@@ -324,10 +324,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -335,7 +335,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -346,8 +346,8 @@
       "area_sq_km": 1.19,
       "map_link": null,
       "coordinates": {
-        "latitude": 6.820723153710996,
-        "longitude": 73.12989714334478,
+        "latitude": 6.823665151907723,
+        "longitude": 73.06866704278288,
         "source": "estimated"
       },
       "projects": {
@@ -387,10 +387,10 @@
       "locality": "Muraidhoo",
       "population": 534,
       "area_sq_km": 0.48,
-      "map_link": null,
+      "map_link": "6.837448783841308, 73.16909764151742",
       "coordinates": {
-        "latitude": 6.787593104370875,
-        "longitude": 73.08785289829201,
+        "latitude": 6.837448783841308,
+        "longitude": 73.16909764151742,
         "source": "estimated"
       },
       "projects": {
@@ -410,10 +410,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "96% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -421,7 +421,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -430,10 +430,10 @@
       "locality": "Thakandhoo",
       "population": 279,
       "area_sq_km": 0.41,
-      "map_link": null,
+      "map_link": "6.842605607273828, 72.99498232108841",
       "coordinates": {
-        "latitude": 6.794611061696993,
-        "longitude": 73.11916319323747,
+        "latitude": 6.842605607273828,
+        "longitude": 72.99498232108841,
         "source": "estimated"
       },
       "projects": {
@@ -453,10 +453,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -464,7 +464,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -475,8 +475,8 @@
       "area_sq_km": 0.26,
       "map_link": null,
       "coordinates": {
-        "latitude": 6.756269203274424,
-        "longitude": 73.14498755931868,
+        "latitude": 6.840443465284348,
+        "longitude": 73.12893056006178,
         "source": "estimated"
       },
       "projects": {
@@ -516,10 +516,10 @@
       "locality": "Uligamu",
       "population": 400,
       "area_sq_km": 1.07,
-      "map_link": null,
+      "map_link": "7.083563891715523, 72.92617153392659",
       "coordinates": {
-        "latitude": 6.797164555069946,
-        "longitude": 73.13948721929879,
+        "latitude": 7.083563891715523,
+        "longitude": 72.92617153392659,
         "source": "estimated"
       },
       "projects": {
@@ -539,18 +539,18 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "27% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
           "phase": null,
           "status": null
         },
-        "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": "Yes",
+        "proposed_for_funding": "yes",
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -559,10 +559,10 @@
       "locality": "Utheemu",
       "population": 612,
       "area_sq_km": 0.5,
-      "map_link": null,
+      "map_link": "6.835984449807293, 73.11275992635046",
       "coordinates": {
-        "latitude": 6.8386649031854185,
-        "longitude": 73.1270097085798,
+        "latitude": 6.835984449807293,
+        "longitude": 73.11275992635046,
         "source": "estimated"
       },
       "projects": {
@@ -582,10 +582,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -593,7 +593,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -604,8 +604,8 @@
       "area_sq_km": 0.36,
       "map_link": null,
       "coordinates": {
-        "latitude": 6.822258491954474,
-        "longitude": 73.12578537161943,
+        "latitude": 6.785095259120132,
+        "longitude": 73.14685132029273,
         "source": "estimated"
       },
       "projects": {
@@ -733,8 +733,8 @@
       "area_sq_km": 0.47,
       "map_link": null,
       "coordinates": {
-        "latitude": 6.630454306554916,
-        "longitude": 73.03363975660655,
+        "latitude": 6.63767508671814,
+        "longitude": 73.00151569827392,
         "source": "estimated"
       },
       "projects": {
@@ -774,10 +774,10 @@
       "locality": "Kulhudhuffushi",
       "population": 10131,
       "area_sq_km": 2.52,
-      "map_link": null,
+      "map_link": "6.62575504990096, 73.0678107617736",
       "coordinates": {
-        "latitude": 6.593211361481389,
-        "longitude": 72.98738960174451,
+        "latitude": 6.62575504990096,
+        "longitude": 73.0678107617736,
         "source": "estimated"
       },
       "projects": {
@@ -797,10 +797,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "5% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -808,7 +808,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -894,7 +894,7 @@
           "status": null
         },
         "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -926,18 +926,18 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": "Completed",
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
-          "funding": "OFID",
-          "phase": "Phase 2",
-          "status": "Completed"
+          "funding": null,
+          "phase": null,
+          "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -980,7 +980,7 @@
           "status": null
         },
         "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1066,7 +1066,7 @@
           "status": null
         },
         "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1152,7 +1152,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1204,10 +1204,10 @@
       "locality": "Bilehffahi",
       "population": 502,
       "area_sq_km": 0.67,
-      "map_link": null,
+      "map_link": "6.33799880872615, 72.97503713806198",
       "coordinates": {
-        "latitude": 5.878838701838989,
-        "longitude": 73.25500554365524,
+        "latitude": 6.33799880872615,
+        "longitude": 72.97503713806198,
         "source": "estimated"
       },
       "projects": {
@@ -1227,10 +1227,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "89% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -1238,7 +1238,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1249,8 +1249,8 @@
       "area_sq_km": 0.88,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.882897778610465,
-        "longitude": 73.29156736722616,
+        "latitude": 5.912773153563548,
+        "longitude": 73.28884427198054,
         "source": "estimated"
       },
       "projects": {
@@ -1335,8 +1335,8 @@
       "area_sq_km": 0.68,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.89963701546008,
-        "longitude": 73.31246810812732,
+        "latitude": 5.921270248122506,
+        "longitude": 73.34319133621683,
         "source": "estimated"
       },
       "projects": {
@@ -1378,8 +1378,8 @@
       "area_sq_km": 1.22,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.899385920316983,
-        "longitude": 73.2641240561314,
+        "latitude": 5.891255050169328,
+        "longitude": 73.2934932840054,
         "source": "estimated"
       },
       "projects": {
@@ -1421,8 +1421,8 @@
       "area_sq_km": 1.01,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.9035265944893895,
-        "longitude": 73.25685620809526,
+        "latitude": 5.9189598398838426,
+        "longitude": 73.26386350828388,
         "source": "estimated"
       },
       "projects": {
@@ -1464,8 +1464,8 @@
       "area_sq_km": 0.89,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.8644697320000185,
-        "longitude": 73.25632095862997,
+        "latitude": 5.890799288672278,
+        "longitude": 73.27904471016114,
         "source": "estimated"
       },
       "projects": {
@@ -1507,8 +1507,8 @@
       "area_sq_km": 0.22,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.8543836830262235,
-        "longitude": 73.29470619739321,
+        "latitude": 5.8686850696477615,
+        "longitude": 73.32935106577308,
         "source": "estimated"
       },
       "projects": {
@@ -1548,10 +1548,10 @@
       "locality": "Lhaimagu",
       "population": 684,
       "area_sq_km": 0.44,
-      "map_link": null,
+      "map_link": "6.16318585519759, 73.25099714256498",
       "coordinates": {
-        "latitude": 5.945394011333017,
-        "longitude": 73.30180543035702,
+        "latitude": 6.16318585519759,
+        "longitude": 73.25099714256498,
         "source": "estimated"
       },
       "projects": {
@@ -1571,10 +1571,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "92% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -1582,7 +1582,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1591,10 +1591,10 @@
       "locality": "Maaugoodhoo",
       "population": 944,
       "area_sq_km": 0.29,
-      "map_link": null,
+      "map_link": "6.036955952296965, 73.28468326603416",
       "coordinates": {
-        "latitude": 5.910485072380529,
-        "longitude": 73.27148374080365,
+        "latitude": 6.036955952296965,
+        "longitude": 73.28468326603416,
         "source": "estimated"
       },
       "projects": {
@@ -1614,10 +1614,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "77% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -1625,7 +1625,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1636,8 +1636,8 @@
       "area_sq_km": 0.31,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.907415266719936,
-        "longitude": 73.33540560121804,
+        "latitude": 5.868340761564475,
+        "longitude": 73.28249778590151,
         "source": "estimated"
       },
       "projects": {
@@ -1711,7 +1711,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1720,10 +1720,10 @@
       "locality": "Narudhoo",
       "population": 544,
       "area_sq_km": 0.43,
-      "map_link": null,
+      "map_link": "6.2643899294789955, 73.21735815925643",
       "coordinates": {
-        "latitude": 5.882214920515741,
-        "longitude": 73.34925656611144,
+        "latitude": 6.2643899294789955,
+        "longitude": 73.21735815925643,
         "source": "estimated"
       },
       "projects": {
@@ -1743,10 +1743,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "53% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -1754,7 +1754,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1763,10 +1763,10 @@
       "locality": "Noomaraa",
       "population": 371,
       "area_sq_km": 0.39,
-      "map_link": null,
+      "map_link": "6.434894289346148, 73.06777774126658",
       "coordinates": {
-        "latitude": 5.9428036611609585,
-        "longitude": 73.34930226191376,
+        "latitude": 6.434894289346148,
+        "longitude": 73.06777774126658,
         "source": "estimated"
       },
       "projects": {
@@ -1786,10 +1786,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "34% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -1797,7 +1797,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1806,10 +1806,10 @@
       "locality": "Fodhdhoo",
       "population": 345,
       "area_sq_km": 0.26,
-      "map_link": null,
+      "map_link": "5.742138108726961, 73.21575781322818",
       "coordinates": {
-        "latitude": 5.849947300618966,
-        "longitude": 73.16342370164152,
+        "latitude": 5.742138108726961,
+        "longitude": 73.21575781322818,
         "source": "estimated"
       },
       "projects": {
@@ -1829,10 +1829,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Contractor: MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -1840,7 +1840,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1851,8 +1851,8 @@
       "area_sq_km": 0.14,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.782155156877172,
-        "longitude": 73.2199978084373,
+        "latitude": 5.754706180974816,
+        "longitude": 73.15656785657785,
         "source": "estimated"
       },
       "projects": {
@@ -1935,10 +1935,10 @@
       "locality": "Kedhikulhudhoo",
       "population": 1556,
       "area_sq_km": 2.09,
-      "map_link": null,
+      "map_link": "5.944947342508328, 73.42116138366445",
       "coordinates": {
-        "latitude": 5.826610790758815,
-        "longitude": 73.21537480124604,
+        "latitude": 5.944947342508328,
+        "longitude": 73.42116138366445,
         "source": "estimated"
       },
       "projects": {
@@ -1958,10 +1958,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "21% progress. Contractor: MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -1969,7 +1969,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -1980,8 +1980,8 @@
       "area_sq_km": 0.29,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.786025426366008,
-        "longitude": 73.24327186528173,
+        "latitude": 5.827530570917354,
+        "longitude": 73.19160014672656,
         "source": "estimated"
       },
       "projects": {
@@ -2023,8 +2023,8 @@
       "area_sq_km": 0.87,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.829092628850642,
-        "longitude": 73.17739908412042,
+        "latitude": 5.803647778013474,
+        "longitude": 73.2072821679524,
         "source": "estimated"
       },
       "projects": {
@@ -2064,10 +2064,10 @@
       "locality": "Lhohi",
       "population": 692,
       "area_sq_km": 0.41,
-      "map_link": null,
+      "map_link": "5.816655818516052, 73.37787990343011",
       "coordinates": {
-        "latitude": 5.781312115745833,
-        "longitude": 73.16374870499301,
+        "latitude": 5.816655818516052,
+        "longitude": 73.37787990343011,
         "source": "estimated"
       },
       "projects": {
@@ -2087,10 +2087,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "38% progress. Contractor: MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -2098,7 +2098,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -2152,8 +2152,8 @@
       "area_sq_km": 0.47,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.841390006349424,
-        "longitude": 73.21719337710792,
+        "latitude": 5.762584355875865,
+        "longitude": 73.24338499138483,
         "source": "estimated"
       },
       "projects": {
@@ -2193,10 +2193,10 @@
       "locality": "Magoodhoo",
       "population": 305,
       "area_sq_km": 0.37,
-      "map_link": null,
+      "map_link": "5.776663370764392, 73.36284190884449",
       "coordinates": {
-        "latitude": 5.824950629232446,
-        "longitude": 73.24229176735766,
+        "latitude": 5.776663370764392,
+        "longitude": 73.36284190884449,
         "source": "estimated"
       },
       "projects": {
@@ -2216,10 +2216,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "5% progress. Contractor: MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -2227,7 +2227,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -2238,8 +2238,8 @@
       "area_sq_km": 1.11,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.8161474296674,
-        "longitude": 73.18312729509212,
+        "latitude": 5.788399523378459,
+        "longitude": 73.2382586062491,
         "source": "estimated"
       },
       "projects": {
@@ -2281,8 +2281,8 @@
       "area_sq_km": 0.22,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.8259738807075205,
-        "longitude": 73.17471115134677,
+        "latitude": 5.795308129321616,
+        "longitude": 73.2383027861331,
         "source": "estimated"
       },
       "projects": {
@@ -2356,7 +2356,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -2367,8 +2367,8 @@
       "area_sq_km": 0.4,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.5604696292406945,
-        "longitude": 73.00584231912973,
+        "latitude": 5.5821461310298535,
+        "longitude": 73.00880967668436,
         "source": "estimated"
       },
       "projects": {
@@ -2410,8 +2410,8 @@
       "area_sq_km": 0.61,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.586011232235502,
-        "longitude": 72.98939825891283,
+        "latitude": 5.614768585412122,
+        "longitude": 72.98220569315096,
         "source": "estimated"
       },
       "projects": {
@@ -2451,10 +2451,10 @@
       "locality": "Dhuvaafaru",
       "population": 3321,
       "area_sq_km": 0.55,
-      "map_link": null,
+      "map_link": "5.6303552960447805, 73.04209604020397",
       "coordinates": {
-        "latitude": 5.553124504328291,
-        "longitude": 72.96862092671458,
+        "latitude": 5.6303552960447805,
+        "longitude": 73.04209604020397,
         "source": "estimated"
       },
       "projects": {
@@ -2474,10 +2474,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -2485,7 +2485,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -2496,8 +2496,8 @@
       "area_sq_km": 0.62,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.599616190310385,
-        "longitude": 73.00002074715444,
+        "latitude": 5.630116241562909,
+        "longitude": 73.00229175511338,
         "source": "estimated"
       },
       "projects": {
@@ -2614,7 +2614,7 @@
           "status": "Completed"
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -2657,7 +2657,7 @@
           "status": null
         },
         "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -2668,8 +2668,8 @@
       "area_sq_km": 0.56,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.632085103025482,
-        "longitude": 72.99025661027652,
+        "latitude": 5.570967043707019,
+        "longitude": 72.97143528431782,
         "source": "estimated"
       },
       "projects": {
@@ -2743,7 +2743,7 @@
           "status": "Completed"
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -2754,8 +2754,8 @@
       "area_sq_km": 0.23,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.642651383336072,
-        "longitude": 72.9695909357872,
+        "latitude": 5.632848743266778,
+        "longitude": 73.02869201336655,
         "source": "estimated"
       },
       "projects": {
@@ -2795,10 +2795,10 @@
       "locality": "Meedhoo",
       "population": 1872,
       "area_sq_km": 0.36,
-      "map_link": null,
+      "map_link": "5.458633978747277, 72.954803798203",
       "coordinates": {
-        "latitude": 5.557364141058431,
-        "longitude": 73.01949396016687,
+        "latitude": 5.458633978747277,
+        "longitude": 72.954803798203,
         "source": "estimated"
       },
       "projects": {
@@ -2818,18 +2818,18 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
-          "funding": null,
-          "phase": null,
-          "status": null
+          "funding": "OFID",
+          "phase": "Phase 2",
+          "status": "Completed"
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -2840,8 +2840,8 @@
       "area_sq_km": 0.39,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.586025763983147,
-        "longitude": 72.9999089848722,
+        "latitude": 5.619612841949277,
+        "longitude": 73.02554471709846,
         "source": "estimated"
       },
       "projects": {
@@ -2883,8 +2883,8 @@
       "area_sq_km": 0.27,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.580865862283853,
-        "longitude": 72.97779820226303,
+        "latitude": 5.591900988566949,
+        "longitude": 73.01321615207475,
         "source": "estimated"
       },
       "projects": {
@@ -2958,7 +2958,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": "Yes"
       }
     },
@@ -2969,8 +2969,8 @@
       "area_sq_km": 0.38,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.60411529968944,
-        "longitude": 73.04086656168448,
+        "latitude": 5.630229049804871,
+        "longitude": 73.02162269425446,
         "source": "estimated"
       },
       "projects": {
@@ -3141,8 +3141,8 @@
       "area_sq_km": 0.25,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.317901541508837,
-        "longitude": 72.98513761293133,
+        "latitude": 5.330345229708694,
+        "longitude": 72.99674927588704,
         "source": "estimated"
       },
       "projects": {
@@ -3184,8 +3184,8 @@
       "area_sq_km": 0.29,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.345417194778715,
-        "longitude": 73.04807545811258,
+        "latitude": 5.3480270071786356,
+        "longitude": 72.9708198707018,
         "source": "estimated"
       },
       "projects": {
@@ -3227,8 +3227,8 @@
       "area_sq_km": 1.63,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.303526594489389,
-        "longitude": 72.95685620809526,
+        "latitude": 5.318959839883842,
+        "longitude": 72.96386350828388,
         "source": "estimated"
       },
       "projects": {
@@ -3268,10 +3268,10 @@
       "locality": "Hithaadhoo",
       "population": 744,
       "area_sq_km": 0.32,
-      "map_link": null,
+      "map_link": "5.006402231632613, 72.9218442329023",
       "coordinates": {
-        "latitude": 5.300408744697796,
-        "longitude": 72.99021589014455,
+        "latitude": 5.006402231632613,
+        "longitude": 72.9218442329023,
         "source": "estimated"
       },
       "projects": {
@@ -3291,10 +3291,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "78% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -3302,7 +3302,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -3311,10 +3311,10 @@
       "locality": "Kamadhoo",
       "population": 552,
       "area_sq_km": 0.21,
-      "map_link": null,
+      "map_link": "5.283261219222437, 73.1369827413209",
       "coordinates": {
-        "latitude": 5.320665583759096,
-        "longitude": 72.95763023183169,
+        "latitude": 5.283261219222437,
+        "longitude": 73.1369827413209,
         "source": "estimated"
       },
       "projects": {
@@ -3334,10 +3334,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "99% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -3483,10 +3483,10 @@
       "locality": "Maalhos",
       "population": 572,
       "area_sq_km": 0.26,
-      "map_link": null,
+      "map_link": "5.135145193546116, 73.10739495228759",
       "coordinates": {
-        "latitude": 5.337940604140525,
-        "longitude": 73.03047232953836,
+        "latitude": 5.135145193546116,
+        "longitude": 73.10739495228759,
         "source": "estimated"
       },
       "projects": {
@@ -3506,10 +3506,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "41% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -3517,7 +3517,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -3571,8 +3571,8 @@
       "area_sq_km": 0.54,
       "map_link": null,
       "coordinates": {
-        "latitude": 5.247607919570806,
-        "longitude": 73.21545620743214,
+        "latitude": 5.213032024614403,
+        "longitude": 73.19441676098252,
         "source": "estimated"
       },
       "projects": {
@@ -3612,10 +3612,10 @@
       "locality": "Kurendhoo",
       "population": 1171,
       "area_sq_km": 0.23,
-      "map_link": null,
+      "map_link": "5.334152465556775, 73.4640252559335",
       "coordinates": {
-        "latitude": 5.192641229402686,
-        "longitude": 73.2034143440898,
+        "latitude": 5.334152465556775,
+        "longitude": 73.4640252559335,
         "source": "estimated"
       },
       "projects": {
@@ -3635,10 +3635,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Contractor: MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -3646,7 +3646,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -3698,10 +3698,10 @@
       "locality": "Olhuvelifushi",
       "population": 703,
       "area_sq_km": 0.29,
-      "map_link": null,
+      "map_link": "5.279315873274012, 73.60764942675688",
       "coordinates": {
-        "latitude": 5.22053640127658,
-        "longitude": 73.15085502523985,
+        "latitude": 5.279315873274012,
+        "longitude": 73.60764942675688,
         "source": "estimated"
       },
       "projects": {
@@ -3721,10 +3721,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Contractor: MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -3732,7 +3732,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -3829,8 +3829,8 @@
       "area_sq_km": 0.11,
       "map_link": null,
       "coordinates": {
-        "latitude": 4.800839431997557,
-        "longitude": 73.48876265750137,
+        "latitude": 4.79580358413911,
+        "longitude": 73.54119336406222,
         "source": "estimated"
       },
       "projects": {
@@ -3872,8 +3872,8 @@
       "area_sq_km": 0.22,
       "map_link": null,
       "coordinates": {
-        "latitude": 4.789468467619241,
-        "longitude": 73.45830809110524,
+        "latitude": 4.77794396973721,
+        "longitude": 73.52115660755645,
         "source": "estimated"
       },
       "projects": {
@@ -3915,8 +3915,8 @@
       "area_sq_km": 0.66,
       "map_link": null,
       "coordinates": {
-        "latitude": 4.782439023255936,
-        "longitude": 73.5270111347274,
+        "latitude": 4.769681669491649,
+        "longitude": 73.4584928654048,
         "source": "estimated"
       },
       "projects": {
@@ -3956,10 +3956,10 @@
       "locality": "Huraa",
       "population": 1654,
       "area_sq_km": 0.53,
-      "map_link": null,
+      "map_link": "4.334375849466889, 73.59986012744032",
       "coordinates": {
-        "latitude": 4.824010534579386,
-        "longitude": 73.49263038839423,
+        "latitude": 4.334375849466889,
+        "longitude": 73.59986012744032,
         "source": "estimated"
       },
       "projects": {
@@ -3979,10 +3979,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "36% in progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -3990,7 +3990,7 @@
           "status": null
         },
         "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -4001,8 +4001,8 @@
       "area_sq_km": 2.83,
       "map_link": null,
       "coordinates": {
-        "latitude": 4.8478721499047905,
-        "longitude": 73.53579724146442,
+        "latitude": 4.773273344130351,
+        "longitude": 73.48795009184381,
         "source": "estimated"
       },
       "projects": {
@@ -4042,10 +4042,10 @@
       "locality": "Maafushi",
       "population": 4471,
       "area_sq_km": 0.42,
-      "map_link": null,
+      "map_link": "3.9426289722680288, 73.49069529231754",
       "coordinates": {
-        "latitude": 4.79016308008439,
-        "longitude": 73.52278750844701,
+        "latitude": 3.9426289722680288,
+        "longitude": 73.49069529231754,
         "source": "estimated"
       },
       "projects": {
@@ -4065,10 +4065,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "56% in progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -4076,7 +4076,7 @@
           "status": null
         },
         "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -4087,8 +4087,8 @@
       "area_sq_km": 0.77,
       "map_link": null,
       "coordinates": {
-        "latitude": 4.836610470610687,
-        "longitude": 73.45447387581844,
+        "latitude": 4.824175855727476,
+        "longitude": 73.54946225825735,
         "source": "estimated"
       },
       "projects": {
@@ -4130,8 +4130,8 @@
       "area_sq_km": 0.12,
       "map_link": null,
       "coordinates": {
-        "latitude": 3.901935852772348,
-        "longitude": 72.83660069265626,
+        "latitude": 3.9194736311311114,
+        "longitude": 72.75873374422436,
         "source": "estimated"
       },
       "projects": {
@@ -4171,10 +4171,10 @@
       "locality": "Feridhoo",
       "population": 544,
       "area_sq_km": 0.45,
-      "map_link": null,
+      "map_link": "4.05100689301384, 72.72521942208513",
       "coordinates": {
-        "latitude": 3.8749492432161685,
-        "longitude": 72.82333939742009,
+        "latitude": 4.05100689301384,
+        "longitude": 72.72521942208513,
         "source": "estimated"
       },
       "projects": {
@@ -4194,10 +4194,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "36% in progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -4205,7 +4205,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -4216,8 +4216,8 @@
       "area_sq_km": 0.21,
       "map_link": null,
       "coordinates": {
-        "latitude": 3.875950916081023,
-        "longitude": 72.77861387466206,
+        "latitude": 3.8673804599980763,
+        "longitude": 72.79134510175942,
         "source": "estimated"
       },
       "projects": {
@@ -4259,8 +4259,8 @@
       "area_sq_km": 0.32,
       "map_link": null,
       "coordinates": {
-        "latitude": 3.937940604140525,
-        "longitude": 72.83047232953835,
+        "latitude": 3.901539456265871,
+        "longitude": 72.84445723929201,
         "source": "estimated"
       },
       "projects": {
@@ -4302,8 +4302,8 @@
       "area_sq_km": 0.23,
       "map_link": null,
       "coordinates": {
-        "latitude": 3.943095978849565,
-        "longitude": 72.81918749305426,
+        "latitude": 3.924423063061432,
+        "longitude": 72.80895431940431,
         "source": "estimated"
       },
       "projects": {
@@ -4343,10 +4343,10 @@
       "locality": "Rasdhoo",
       "population": 1282,
       "area_sq_km": 0.22,
-      "map_link": null,
+      "map_link": "4.263177093066777, 72.99239925111185",
       "coordinates": {
-        "latitude": 3.8939720795799966,
-        "longitude": 72.81924598452228,
+        "latitude": 4.263177093066777,
+        "longitude": 72.99239925111185,
         "source": "estimated"
       },
       "projects": {
@@ -4366,10 +4366,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "13% in progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -4377,7 +4377,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -4388,8 +4388,8 @@
       "area_sq_km": 1.63,
       "map_link": null,
       "coordinates": {
-        "latitude": 3.8558072617338635,
-        "longitude": 72.84735628591307,
+        "latitude": 3.9022569214101073,
+        "longitude": 72.75982260156793,
         "source": "estimated"
       },
       "projects": {
@@ -4429,10 +4429,10 @@
       "locality": "Ukulhas",
       "population": 1284,
       "area_sq_km": 0.24,
-      "map_link": null,
+      "map_link": "4.215015768889795, 72.86370056558623",
       "coordinates": {
-        "latitude": 3.914027247736284,
-        "longitude": 72.8118902164653,
+        "latitude": 4.215015768889795,
+        "longitude": 72.86370056558623,
         "source": "estimated"
       },
       "projects": {
@@ -4452,10 +4452,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "55% in progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -4463,7 +4463,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -4472,11 +4472,11 @@
       "locality": "Dhagethi",
       "population": 936,
       "area_sq_km": 0.3,
-      "map_link": null,
+      "map_link": "3.6079660043153923, 72.95571241596919",
       "coordinates": {
-        "latitude": null,
-        "longitude": null,
-        "source": "unknown"
+        "latitude": 3.6079660043153923,
+        "longitude": 72.95571241596919,
+        "source": "estimated"
       },
       "projects": {
         "water_network": {
@@ -4495,10 +4495,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% in progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -4506,7 +4506,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -4515,11 +4515,11 @@
       "locality": "Dhidhdhoo",
       "population": 141,
       "area_sq_km": 0.2,
-      "map_link": null,
+      "map_link": "3.4835927717617503, 72.87756142465156",
       "coordinates": {
-        "latitude": null,
-        "longitude": null,
-        "source": "unknown"
+        "latitude": 3.4835927717617503,
+        "longitude": 72.87756142465156,
+        "source": "estimated"
       },
       "projects": {
         "water_network": {
@@ -4538,10 +4538,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% in progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -4549,7 +4549,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -4558,11 +4558,11 @@
       "locality": "Dhigurah",
       "population": 761,
       "area_sq_km": 0.55,
-      "map_link": null,
+      "map_link": "3.538446150828006, 72.93134040955483",
       "coordinates": {
-        "latitude": null,
-        "longitude": null,
-        "source": "unknown"
+        "latitude": 3.538446150828006,
+        "longitude": 72.93134040955483,
+        "source": "estimated"
       },
       "projects": {
         "water_network": {
@@ -4581,10 +4581,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "44% in progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -4592,7 +4592,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -4816,11 +4816,11 @@
       "locality": "Mandhoo",
       "population": 418,
       "area_sq_km": 0.39,
-      "map_link": null,
+      "map_link": "3.6968127386688643, 72.70908860629513",
       "coordinates": {
-        "latitude": null,
-        "longitude": null,
-        "source": "unknown"
+        "latitude": 3.6968127386688643,
+        "longitude": 72.70908860629513,
+        "source": "estimated"
       },
       "projects": {
         "water_network": {
@@ -4839,10 +4839,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "76% in progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -4850,7 +4850,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -4859,11 +4859,11 @@
       "locality": "Omadhoo",
       "population": 913,
       "area_sq_km": 0.23,
-      "map_link": null,
+      "map_link": "3.7919931901409236, 72.96290775939599",
       "coordinates": {
-        "latitude": null,
-        "longitude": null,
-        "source": "unknown"
+        "latitude": 3.7919931901409236,
+        "longitude": 72.96290775939599,
+        "source": "estimated"
       },
       "projects": {
         "water_network": {
@@ -4882,10 +4882,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "26% in progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -4893,7 +4893,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -4904,8 +4904,8 @@
       "area_sq_km": 0.16,
       "map_link": null,
       "coordinates": {
-        "latitude": 3.211182942251866,
-        "longitude": 73.49738627468277,
+        "latitude": 3.2463920102698443,
+        "longitude": 73.50034974708407,
         "source": "estimated"
       },
       "projects": {
@@ -4945,10 +4945,10 @@
       "locality": "Fulidhoo",
       "population": 400,
       "area_sq_km": 0.12,
-      "map_link": null,
+      "map_link": "3.6803431635903876, 73.41644113166578",
       "coordinates": {
-        "latitude": 3.205249599469165,
-        "longitude": 73.45455630632658,
+        "latitude": 3.6803431635903876,
+        "longitude": 73.41644113166578,
         "source": "estimated"
       },
       "projects": {
@@ -4968,10 +4968,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -4979,7 +4979,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -4990,8 +4990,8 @@
       "area_sq_km": 0.12,
       "map_link": null,
       "coordinates": {
-        "latitude": 3.214891836449577,
-        "longitude": 73.49053402146286,
+        "latitude": 3.1508817674084715,
+        "longitude": 73.51756163786713,
         "source": "estimated"
       },
       "projects": {
@@ -5033,8 +5033,8 @@
       "area_sq_km": 0.06,
       "map_link": null,
       "coordinates": {
-        "latitude": 3.1743931312417835,
-        "longitude": 73.51466770209683,
+        "latitude": 3.1559030268667345,
+        "longitude": 73.48873096760927,
         "source": "estimated"
       },
       "projects": {
@@ -5074,10 +5074,10 @@
       "locality": "Thinadhoo",
       "population": 258,
       "area_sq_km": 0.12,
-      "map_link": null,
+      "map_link": "3.4884750446228003, 73.539126845023",
       "coordinates": {
-        "latitude": 3.194240149634579,
-        "longitude": 73.46381389211854,
+        "latitude": 3.4884750446228003,
+        "longitude": 73.539126845023,
         "source": "estimated"
       },
       "projects": {
@@ -5097,18 +5097,18 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
           "phase": null,
           "status": null
         },
-        "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": null,
+        "proposed_for_funding": "yes",
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -5119,8 +5119,8 @@
       "area_sq_km": 0.14,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.9868406174520366,
-        "longitude": 73.54871206179571,
+        "latitude": 3.037650301296222,
+        "longitude": 73.52778761727139,
         "source": "estimated"
       },
       "projects": {
@@ -5162,8 +5162,8 @@
       "area_sq_km": 0.65,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.9711209777241376,
-        "longitude": 73.46097215472663,
+        "latitude": 2.9878575550063156,
+        "longitude": 73.48800846233208,
         "source": "estimated"
       },
       "projects": {
@@ -5203,10 +5203,10 @@
       "locality": "Maduvvari",
       "population": 318,
       "area_sq_km": 0.12,
-      "map_link": null,
+      "map_link": "5.486482149959716, 72.89615400926462",
       "coordinates": {
-        "latitude": 3.042651383336073,
-        "longitude": 73.4695909357872,
+        "latitude": 5.486482149959716,
+        "longitude": 72.89615400926462,
         "source": "estimated"
       },
       "projects": {
@@ -5226,10 +5226,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "9% progress. Contractor: MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -5237,7 +5237,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -5248,8 +5248,8 @@
       "area_sq_km": 0.68,
       "map_link": null,
       "coordinates": {
-        "latitude": 3.0381705473269416,
-        "longitude": 73.478933106835,
+        "latitude": 2.962064521091091,
+        "longitude": 73.45106470582773,
         "source": "estimated"
       },
       "projects": {
@@ -5291,8 +5291,8 @@
       "area_sq_km": 0.77,
       "map_link": null,
       "coordinates": {
-        "latitude": 3.0306732787992416,
-        "longitude": 73.46176223158538,
+        "latitude": 2.989523162911343,
+        "longitude": 73.49634437503926,
         "source": "estimated"
       },
       "projects": {
@@ -5334,8 +5334,8 @@
       "area_sq_km": 0.13,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.999749135185326,
-        "longitude": 73.54067745095082,
+        "latitude": 2.9820333738669116,
+        "longitude": 73.51071446091036,
         "source": "estimated"
       },
       "projects": {
@@ -5375,10 +5375,10 @@
       "locality": "Raimandhoo",
       "population": 171,
       "area_sq_km": 0.28,
-      "map_link": null,
+      "map_link": "3.0890894823872834, 73.63854823710842",
       "coordinates": {
-        "latitude": 2.9598475182277486,
-        "longitude": 73.50213988206035,
+        "latitude": 3.0890894823872834,
+        "longitude": 73.63854823710842,
         "source": "estimated"
       },
       "projects": {
@@ -5398,10 +5398,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Contractor: MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -5409,7 +5409,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -5420,8 +5420,8 @@
       "area_sq_km": 0.42,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.978600331449972,
-        "longitude": 73.54707519902786,
+        "latitude": 2.979512172845855,
+        "longitude": 73.53248470480341,
         "source": "estimated"
       },
       "projects": {
@@ -5461,10 +5461,10 @@
       "locality": "Biledhdhoo",
       "population": 967,
       "area_sq_km": 0.32,
-      "map_link": null,
+      "map_link": "3.118739400510659, 72.98404617441932",
       "coordinates": {
-        "latitude": 2.892289338466841,
-        "longitude": 72.98187371813648,
+        "latitude": 3.118739400510659,
+        "longitude": 72.98404617441932,
         "source": "estimated"
       },
       "projects": {
@@ -5484,10 +5484,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -5495,7 +5495,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": null
       }
     },
@@ -5506,8 +5506,8 @@
       "area_sq_km": 0.4,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.922962256358352,
-        "longitude": 73.0430037630129,
+        "latitude": 2.9074594020848004,
+        "longitude": 72.97909165274324,
         "source": "estimated"
       },
       "projects": {
@@ -5549,8 +5549,8 @@
       "area_sq_km": 0.18,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.8561180700883373,
-        "longitude": 72.9873871710566,
+        "latitude": 2.8616795992808695,
+        "longitude": 73.03168790094865,
         "source": "estimated"
       },
       "projects": {
@@ -5592,8 +5592,8 @@
       "area_sq_km": 0.25,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.9249506292324465,
-        "longitude": 73.04229176735765,
+        "latitude": 2.893882398082697,
+        "longitude": 72.99546260602706,
         "source": "estimated"
       },
       "projects": {
@@ -5635,8 +5635,8 @@
       "area_sq_km": 0.75,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.8990022183261708,
-        "longitude": 72.97785657868258,
+        "latitude": 2.929442185704192,
+        "longitude": 73.04915465529135,
         "source": "estimated"
       },
       "projects": {
@@ -5678,8 +5678,8 @@
       "area_sq_km": 0.25,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.190091727124516,
-        "longitude": 73.03857003646567,
+        "latitude": 2.1920265591452845,
+        "longitude": 72.98010684160262,
         "source": "estimated"
       },
       "projects": {
@@ -5721,8 +5721,8 @@
       "area_sq_km": 0.22,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.1588063695503488,
-        "longitude": 72.95376474042494,
+        "latitude": 2.2083301484375,
+        "longitude": 72.98632248395184,
         "source": "estimated"
       },
       "projects": {
@@ -5796,7 +5796,7 @@
           "status": null
         },
         "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "Yes",
         "urban_centers": "Yes"
       }
     },
@@ -5807,8 +5807,8 @@
       "area_sq_km": 0.24,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.178091041446101,
-        "longitude": 72.96461845669846,
+        "latitude": 2.1635961022945374,
+        "longitude": 72.96878853663372,
         "source": "estimated"
       },
       "projects": {
@@ -5893,8 +5893,8 @@
       "area_sq_km": 0.17,
       "map_link": null,
       "coordinates": {
-        "latitude": 2.1638208595222577,
-        "longitude": 72.9717414700254,
+        "latitude": 2.1707617304007742,
+        "longitude": 73.03583393792297,
         "source": "estimated"
       },
       "projects": {
@@ -5934,10 +5934,10 @@
       "locality": "Buruni",
       "population": 414,
       "area_sq_km": 0.34,
-      "map_link": null,
+      "map_link": "2.5592755176478845, 73.10526117664143",
       "coordinates": {
-        "latitude": 1.8170764188257578,
-        "longitude": 73.16324786278382,
+        "latitude": 2.5592755176478845,
+        "longitude": 73.10526117664143,
         "source": "estimated"
       },
       "projects": {
@@ -5957,10 +5957,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -5968,7 +5968,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -5979,8 +5979,8 @@
       "area_sq_km": 0.29,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.8480566412402302,
-        "longitude": 73.18262638292826,
+        "latitude": 1.7703146271715924,
+        "longitude": 73.16984666828948,
         "source": "estimated"
       },
       "projects": {
@@ -6020,10 +6020,10 @@
       "locality": "Gaadhiffushi",
       "population": 317,
       "area_sq_km": 0.14,
-      "map_link": null,
+      "map_link": "2.2528329884503817, 73.21278569047163",
       "coordinates": {
-        "latitude": 1.7620545564536547,
-        "longitude": 73.16961055134763,
+        "latitude": 2.2528329884503817,
+        "longitude": 73.21278569047163,
         "source": "estimated"
       },
       "projects": {
@@ -6043,10 +6043,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -6054,7 +6054,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -6108,8 +6108,8 @@
       "area_sq_km": 0.3,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.8460130459760349,
-        "longitude": 73.23504023523968,
+        "latitude": 1.8024856761202424,
+        "longitude": 73.20603281178768,
         "source": "estimated"
       },
       "projects": {
@@ -6151,8 +6151,8 @@
       "area_sq_km": 0.82,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.7672630431686907,
-        "longitude": 73.16761435113679,
+        "latitude": 1.7726685800057365,
+        "longitude": 73.20646445812363,
         "source": "estimated"
       },
       "projects": {
@@ -6194,8 +6194,8 @@
       "area_sq_km": 0.38,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.8473660227011879,
-        "longitude": 73.24330294842099,
+        "latitude": 1.8199572652196143,
+        "longitude": 73.21748970786398,
         "source": "estimated"
       },
       "projects": {
@@ -6237,8 +6237,8 @@
       "area_sq_km": 0.54,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.8049136909556485,
-        "longitude": 73.19325299413484,
+        "latitude": 1.8241882206854785,
+        "longitude": 73.17692138487732,
         "source": "estimated"
       },
       "projects": {
@@ -6280,8 +6280,8 @@
       "area_sq_km": 0.37,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.8488134726472114,
-        "longitude": 73.15561897587129,
+        "latitude": 1.771194909678079,
+        "longitude": 73.2017887449878,
         "source": "estimated"
       },
       "projects": {
@@ -6323,8 +6323,8 @@
       "area_sq_km": 1.0,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.777199087098208,
-        "longitude": 73.21182921632213,
+        "latitude": 1.762978359641767,
+        "longitude": 73.24919204381513,
         "source": "estimated"
       },
       "projects": {
@@ -6366,8 +6366,8 @@
       "area_sq_km": 0.26,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.7820714203260684,
-        "longitude": 73.1858119028667,
+        "latitude": 1.8492801239035719,
+        "longitude": 73.19402510970136,
         "source": "estimated"
       },
       "projects": {
@@ -6409,8 +6409,8 @@
       "area_sq_km": 0.45,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.7583826053471436,
-        "longitude": 73.21121618567808,
+        "latitude": 1.8355320733647602,
+        "longitude": 73.17426246538666,
         "source": "estimated"
       },
       "projects": {
@@ -6495,8 +6495,8 @@
       "area_sq_km": 0.54,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.4901328703013672,
-        "longitude": 73.19719696944352,
+        "latitude": 1.4725666812599099,
+        "longitude": 73.15867869609664,
         "source": "estimated"
       },
       "projects": {
@@ -6538,8 +6538,8 @@
       "area_sq_km": 1.72,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.5018241974865292,
-        "longitude": 73.20310348367806,
+        "latitude": 1.4605655452588768,
+        "longitude": 73.20509967731307,
         "source": "estimated"
       },
       "projects": {
@@ -6624,8 +6624,8 @@
       "area_sq_km": 1.05,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.5227997889536544,
-        "longitude": 73.22735844819123,
+        "latitude": 1.519027326807904,
+        "longitude": 73.24849521091902,
         "source": "estimated"
       },
       "projects": {
@@ -6667,8 +6667,8 @@
       "area_sq_km": 1.47,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.4694098937982634,
-        "longitude": 73.16022261102725,
+        "latitude": 1.5345738450863533,
+        "longitude": 73.19523300596568,
         "source": "estimated"
       },
       "projects": {
@@ -6710,8 +6710,8 @@
       "area_sq_km": 2.13,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.5229928081711395,
-        "longitude": 73.23300898009174,
+        "latitude": 1.468029829590044,
+        "longitude": 73.24600331790867,
         "source": "estimated"
       },
       "projects": {
@@ -6753,8 +6753,8 @@
       "area_sq_km": 0.92,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.5050275120456649,
-        "longitude": 73.24253471621324,
+        "latitude": 1.5182677155269169,
+        "longitude": 73.19611854739765,
         "source": "estimated"
       },
       "projects": {
@@ -6796,8 +6796,8 @@
       "area_sq_km": 0.53,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.4968686483828622,
-        "longitude": 73.23192880014655,
+        "latitude": 1.5088844024424524,
+        "longitude": 73.19310212206223,
         "source": "estimated"
       },
       "projects": {
@@ -6839,8 +6839,8 @@
       "area_sq_km": 0.22,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.5108890327252829,
-        "longitude": 73.1593264084616,
+        "latitude": 1.5274177810886256,
+        "longitude": 73.17267496989102,
         "source": "estimated"
       },
       "projects": {
@@ -6882,8 +6882,8 @@
       "area_sq_km": 0.4,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.4650899644671147,
-        "longitude": 73.18166655986782,
+        "latitude": 1.4545823972636678,
+        "longitude": 73.22561519813756,
         "source": "estimated"
       },
       "projects": {
@@ -6925,8 +6925,8 @@
       "area_sq_km": 0.24,
       "map_link": null,
       "coordinates": {
-        "latitude": 1.4562919280531015,
-        "longitude": 73.22232245246624,
+        "latitude": 1.4923788620744702,
+        "longitude": 73.15446507000384,
         "source": "estimated"
       },
       "projects": {
@@ -6966,10 +6966,10 @@
       "locality": "Dhaandhoo",
       "population": 1044,
       "area_sq_km": 0.32,
-      "map_link": null,
+      "map_link": "0.6222830390247255, 73.46067851384024",
       "coordinates": {
-        "latitude": 0.608993981809747,
-        "longitude": 73.13974287835,
+        "latitude": 0.6222830390247255,
+        "longitude": 73.46067851384024,
         "source": "estimated"
       },
       "projects": {
@@ -6989,10 +6989,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "98% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -7000,7 +7000,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -7011,8 +7011,8 @@
       "area_sq_km": 0.23,
       "map_link": null,
       "coordinates": {
-        "latitude": 0.5992545862470221,
-        "longitude": 73.12413227488582,
+        "latitude": 0.5700781578524621,
+        "longitude": 73.11566567760514,
         "source": "estimated"
       },
       "projects": {
@@ -7052,10 +7052,10 @@
       "locality": "Gemanafushi",
       "population": 1318,
       "area_sq_km": 0.57,
-      "map_link": null,
+      "map_link": "0.44313200445873385, 73.5673366539902",
       "coordinates": {
-        "latitude": 0.6289476942228436,
-        "longitude": 73.10885583800604,
+        "latitude": 0.44313200445873385,
+        "longitude": 73.5673366539902,
         "source": "estimated"
       },
       "projects": {
@@ -7075,10 +7075,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "0% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -7086,7 +7086,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -7097,8 +7097,8 @@
       "area_sq_km": 0.32,
       "map_link": null,
       "coordinates": {
-        "latitude": 0.5853521962237764,
-        "longitude": 73.06054038849699,
+        "latitude": 0.5572395394631684,
+        "longitude": 73.09063763837221,
         "source": "estimated"
       },
       "projects": {
@@ -7140,8 +7140,8 @@
       "area_sq_km": 1.19,
       "map_link": null,
       "coordinates": {
-        "latitude": 0.5801006978363666,
-        "longitude": 73.10599500454434,
+        "latitude": 0.6305272950161823,
+        "longitude": 73.11058722945971,
         "source": "estimated"
       },
       "projects": {
@@ -7226,8 +7226,8 @@
       "area_sq_km": 0.52,
       "map_link": null,
       "coordinates": {
-        "latitude": 0.6108890327252828,
-        "longitude": 73.0593264084616,
+        "latitude": 0.6274177810886256,
+        "longitude": 73.07267496989101,
         "source": "estimated"
       },
       "projects": {
@@ -7269,8 +7269,8 @@
       "area_sq_km": 0.61,
       "map_link": null,
       "coordinates": {
-        "latitude": 0.5990022183261708,
-        "longitude": 73.07785657868257,
+        "latitude": 0.6294421857041921,
+        "longitude": 73.14915465529134,
         "source": "estimated"
       },
       "projects": {
@@ -7344,7 +7344,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -7355,8 +7355,8 @@
       "area_sq_km": 0.49,
       "map_link": null,
       "coordinates": {
-        "latitude": 0.18752555250754308,
-        "longitude": 73.04278289583655,
+        "latitude": 0.2357140238362262,
+        "longitude": 72.96538347133169,
         "source": "estimated"
       },
       "projects": {
@@ -7430,7 +7430,7 @@
           "status": null
         },
         "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -7527,8 +7527,8 @@
       "area_sq_km": 0.47,
       "map_link": null,
       "coordinates": {
-        "latitude": 0.16646689882940927,
-        "longitude": 73.04180885659562,
+        "latitude": 0.24286351999384614,
+        "longitude": 72.98960288976086,
         "source": "estimated"
       },
       "projects": {
@@ -7570,8 +7570,8 @@
       "area_sq_km": 0.46,
       "map_link": null,
       "coordinates": {
-        "latitude": 0.23652218708274503,
-        "longitude": 73.0440577802509,
+        "latitude": 0.23983544481238847,
+        "longitude": 72.9770852249702,
         "source": "estimated"
       },
       "projects": {
@@ -7613,8 +7613,8 @@
       "area_sq_km": 0.41,
       "map_link": null,
       "coordinates": {
-        "latitude": 0.23709849406654637,
-        "longitude": 73.01988165987272,
+        "latitude": 0.23291834108369924,
+        "longitude": 73.03649988779213,
         "source": "estimated"
       },
       "projects": {
@@ -7656,8 +7656,8 @@
       "area_sq_km": 1.85,
       "map_link": null,
       "coordinates": {
-        "latitude": 0.19424014963457906,
-        "longitude": 72.96381389211854,
+        "latitude": 0.22270745864068298,
+        "longitude": 72.9931068156159,
         "source": "estimated"
       },
       "projects": {
@@ -7742,8 +7742,8 @@
       "area_sq_km": 4.95,
       "map_link": null,
       "coordinates": {
-        "latitude": -0.31146777222757743,
-        "longitude": 73.43148333475987,
+        "latitude": -0.32348348315281394,
+        "longitude": 73.44590588184461,
         "source": "estimated"
       },
       "projects": {
@@ -7817,7 +7817,7 @@
           "status": null
         },
         "proposed_for_funding": "Yes",
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },
@@ -7828,8 +7828,8 @@
       "area_sq_km": 5.51,
       "map_link": null,
       "coordinates": {
-        "latitude": -0.6772002110463454,
-        "longitude": 73.12735844819122,
+        "latitude": -0.680972673192096,
+        "longitude": 73.14849521091901,
         "source": "estimated"
       },
       "projects": {
@@ -7849,10 +7849,10 @@
           "connections": null
         },
         "harbour": {
-          "funding": null,
+          "funding": "GOV (PSIP)",
           "phase": null,
-          "status": null,
-          "info": null
+          "status": "In progress",
+          "info": "39% progress. Awarded to MTCC"
         },
         "desalination_plant": {
           "funding": null,
@@ -7860,7 +7860,7 @@
           "status": null
         },
         "proposed_for_funding": null,
-        "ongoing_harbor_project": null,
+        "ongoing_harbor_project": "yes",
         "urban_centers": null
       }
     },

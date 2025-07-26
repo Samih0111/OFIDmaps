@@ -79,16 +79,39 @@ async function initializeApp() {
         setupAllModules();
         
         // Step 5: Initialize event listeners after components are loaded
-        setTimeout(() => {
-            console.log('Attempting to set up filter event listeners...');
-            if (window.FilterManager) {
-                console.log('FilterManager found, setting up listeners...');
-                window.FilterManager.setupEventListeners();
-                console.log('Filter event listeners set up');
+        // Use a longer delay and multiple attempts to ensure components are ready
+        let attempts = 0;
+        const maxAttempts = 10;
+        
+        const trySetupFilters = () => {
+            attempts++;
+            console.log(`Attempting to set up filter event listeners (attempt ${attempts})...`);
+            
+            const filterContainer = document.getElementById('filterContainer');
+            const proposedFilter = document.getElementById('proposedFundingFilter');
+            
+            if (filterContainer && proposedFilter) {
+                console.log('Filter elements found, setting up listeners...');
+                if (window.FilterManager) {
+                    window.FilterManager.setupEventListeners();
+                    console.log('Filter event listeners set up successfully');
+                } else {
+                    console.error('FilterManager not found!');
+                }
             } else {
-                console.error('FilterManager not found!');
+                console.log('Filter elements not ready yet, retrying...', {
+                    filterContainer: !!filterContainer,
+                    proposedFilter: !!proposedFilter
+                });
+                if (attempts < maxAttempts) {
+                    setTimeout(trySetupFilters, 200);
+                } else {
+                    console.error('Failed to find filter elements after maximum attempts');
+                }
             }
-        }, 500);
+        };
+        
+        setTimeout(trySetupFilters, 100);
         
         console.log('Application initialized successfully');
         
