@@ -127,16 +127,6 @@ const FilterManager = {
             ongoingHarbor: harborCount,
             urbanCenters: urbanCount
         });
-        
-        // Expected counts: proposed=14, harbor=59, urban=7
-        if (proposedCount === 14 && harborCount === 59 && urbanCount === 7) {
-            console.log('✅ All special filter counts match expected values!');
-        } else {
-            console.log('⚠️ Special filter counts do not match expected values:', {
-                expected: { proposed: 14, harbor: 59, urban: 7 },
-                actual: { proposed: proposedCount, harbor: harborCount, urban: urbanCount }
-            });
-        }
     },
     
     // Handle special filter toggle (show/hide overlays)
