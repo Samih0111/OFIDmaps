@@ -27,6 +27,7 @@ const FilterManager = {
         this.setupControlButtons();
         this.setupMobileFilters();
         this.setupCollapsibleFilters();
+        this.setupHamburgerMenu();
         
         // Initialize visual states for special filters
         setTimeout(() => {
@@ -179,12 +180,14 @@ const FilterManager = {
     setupMobileFilters() {
         const mobileToggle = document.querySelector('.mobile-filter-toggle');
         const backupToggle = document.getElementById('mobileFilterToggleBackup');
+        const filterContainer = document.getElementById('filterContainer');
         const filterSection = document.querySelector('.filter-section');
         const mobileClose = document.querySelector('.mobile-filter-close');
         
         console.log('Setting up mobile filters...', {
             mobileToggle: !!mobileToggle,
             backupToggle: !!backupToggle,
+            filterContainer: !!filterContainer,
             filterSection: !!filterSection,
             mobileClose: !!mobileClose
         });
@@ -200,30 +203,30 @@ const FilterManager = {
         const toggleButtons = [mobileToggle, backupToggle].filter(btn => btn);
         
         toggleButtons.forEach(button => {
-            if (button && filterSection) {
-                button.addEventListener('click', () => {
+            if (button && filterContainer) {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     console.log('Filter toggle button clicked');
-                    filterSection.classList.toggle('mobile-visible');
+                    filterContainer.classList.toggle('mobile-visible');
                 });
             }
         });
         
-        if (mobileClose && filterSection) {
+        if (mobileClose && filterContainer) {
             mobileClose.addEventListener('click', () => {
-                filterSection.classList.remove('mobile-visible');
+                filterContainer.classList.remove('mobile-visible');
             });
         }
         
-        // Close filters when clicking outside on mobile
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 1024 && 
-                filterSection && 
-                filterSection.classList.contains('mobile-visible') &&
-                !filterSection.contains(e.target) && 
-                !toggleButtons.some(btn => btn && btn.contains(e.target))) {
-                filterSection.classList.remove('mobile-visible');
-            }
-        });
+        // Close filters when clicking on backdrop
+        if (filterContainer) {
+            filterContainer.addEventListener('click', (e) => {
+                if (e.target === filterContainer) {
+                    filterContainer.classList.remove('mobile-visible');
+                }
+            });
+        }
         
         // Handle window resize
         window.addEventListener('resize', () => {
@@ -235,6 +238,234 @@ const FilterManager = {
                 }
             }
         });
+    },
+    
+    // Setup hamburger menu functionality
+    setupHamburgerMenu() {
+        const hamburgerBtn = document.getElementById('hamburgerMenuBtn');
+        const popup = document.getElementById('hamburgerFilterPopup');
+        const closeBtn = document.getElementById('closeHamburgerFilter');
+        const popupBody = document.getElementById('hamburgerFilterBody');
+        
+        console.log('Setting up hamburger menu...', {
+            hamburgerBtn: !!hamburgerBtn,
+            popup: !!popup,
+            closeBtn: !!closeBtn,
+            popupBody: !!popupBody
+        });
+        
+        if (!hamburgerBtn || !popup || !closeBtn || !popupBody) {
+            console.error('Hamburger menu elements not found');
+            return;
+        }
+        
+        // Open popup
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.openHamburgerPopup();
+        });
+        
+        // Close popup
+        closeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.closeHamburgerPopup();
+        });
+        
+        // Close popup when clicking backdrop
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                this.closeHamburgerPopup();
+            }
+        });
+        
+        // Close popup on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('show')) {
+                this.closeHamburgerPopup();
+            }
+        });
+    },
+    
+    // Open hamburger filter popup
+    openHamburgerPopup() {
+        const popup = document.getElementById('hamburgerFilterPopup');
+        const hamburgerBtn = document.getElementById('hamburgerMenuBtn');
+        const popupBody = document.getElementById('hamburgerFilterBody');
+        
+        if (!popup || !hamburgerBtn || !popupBody) return;
+        
+        // Clear previous content
+        popupBody.innerHTML = '';
+        
+        // Clone filter content from the main filter section
+        const filterSection = document.querySelector('.filter-section');
+        if (filterSection) {
+            const filterClone = filterSection.cloneNode(true);
+            
+            // Remove mobile-specific elements
+            const mobileClose = filterClone.querySelector('.mobile-filter-close');
+            if (mobileClose) mobileClose.remove();
+            
+            // Remove classes that might interfere
+            filterClone.classList.remove('mobile-visible');
+            filterClone.style.position = 'static';
+            filterClone.style.transform = 'none';
+            filterClone.style.background = 'transparent';
+            filterClone.style.maxHeight = 'none';
+            filterClone.style.boxShadow = 'none';
+            filterClone.style.borderRadius = '0';
+            filterClone.style.margin = '0';
+            filterClone.style.maxWidth = 'none';
+            filterClone.style.width = '100%';
+            
+            popupBody.appendChild(filterClone);
+            
+            // Re-bind event listeners for the cloned elements
+            this.rebindFilterEvents(filterClone);
+        }
+        
+        // Show popup
+        popup.classList.add('show');
+        hamburgerBtn.classList.add('active');
+        
+        // Focus trap
+        const focusableElements = popup.querySelectorAll('button, input[type="checkbox"], [tabindex]:not([tabindex="-1"])');
+        if (focusableElements.length > 0) {
+            focusableElements[0].focus();
+        }
+    },
+    
+    // Close hamburger filter popup
+    closeHamburgerPopup() {
+        const popup = document.getElementById('hamburgerFilterPopup');
+        const hamburgerBtn = document.getElementById('hamburgerMenuBtn');
+        
+        if (!popup || !hamburgerBtn) return;
+        
+        popup.classList.remove('show');
+        hamburgerBtn.classList.remove('active');
+    },
+    
+    // Rebind event listeners for cloned filter elements
+    rebindFilterEvents(container) {
+        // Funding agency checkboxes
+        container.querySelectorAll('.funding-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', this.applyFilters.bind(this));
+        });
+        
+        // Phase checkboxes
+        container.querySelectorAll('.phase-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', this.applyFilters.bind(this));
+        });
+        
+        // Project type checkboxes
+        container.querySelectorAll('.project-type-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', this.applyFilters.bind(this));
+        });
+        
+        // Control buttons
+        const selectAllFunding = container.querySelector('#selectAllFunding');
+        const unselectAllFunding = container.querySelector('#unselectAllFunding');
+        const selectAllProjectType = container.querySelector('#selectAllProjectType');
+        const unselectAllProjectType = container.querySelector('#unselectAllProjectType');
+        const resetFilters = container.querySelector('#resetFilters');
+        
+        if (selectAllFunding) selectAllFunding.addEventListener('click', () => {
+            this.toggleAllCheckboxes('.funding-checkbox', true);
+            this.closeHamburgerPopup();
+        });
+        if (unselectAllFunding) unselectAllFunding.addEventListener('click', () => {
+            this.toggleAllCheckboxes('.funding-checkbox', false);
+            this.closeHamburgerPopup();
+        });
+        if (selectAllProjectType) selectAllProjectType.addEventListener('click', () => {
+            this.toggleAllCheckboxes('.project-type-checkbox', true);
+            this.closeHamburgerPopup();
+        });
+        if (unselectAllProjectType) unselectAllProjectType.addEventListener('click', () => {
+            this.toggleAllCheckboxes('.project-type-checkbox', false);
+            this.closeHamburgerPopup();
+        });
+        if (resetFilters) {
+            resetFilters.addEventListener('click', () => {
+                this.resetFilters();
+                this.closeHamburgerPopup();
+            });
+        }
+        
+        // Special filters
+        this.setupSpecialFiltersInContainer(container);
+        
+        // Collapsible sections
+        const filterHeaders = container.querySelectorAll('.filter-group-header');
+        filterHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const targetId = header.getAttribute('data-target');
+                const content = container.querySelector('#' + targetId);
+                const icon = header.querySelector('.filter-toggle-icon');
+                
+                if (content && icon) {
+                    content.classList.toggle('collapsed');
+                    icon.classList.toggle('rotated');
+                }
+            });
+        });
+    },
+    
+    // Setup special filters within a container
+    setupSpecialFiltersInContainer(container) {
+        const proposedCircle = container.querySelector('.special-filter-circle.proposed-funding');
+        const ongoingCircle = container.querySelector('.special-filter-circle.ongoing-harbor');
+        const urbanCircle = container.querySelector('.special-filter-circle.urban-centers');
+        
+        const proposedFundingFilter = container.querySelector('#proposedFundingFilter');
+        const ongoingHarborFilter = container.querySelector('#ongoingHarborFilter');
+        const urbanCentersFilter = container.querySelector('#urbanCentersFilter');
+        
+        if (proposedCircle && proposedFundingFilter) {
+            proposedCircle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                // Update the original checkbox
+                const originalCheckbox = document.getElementById('proposedFundingFilter');
+                if (originalCheckbox) {
+                    originalCheckbox.checked = !originalCheckbox.checked;
+                    proposedFundingFilter.checked = originalCheckbox.checked;
+                    this.updateSpecialFilterVisualState(proposedFundingFilter, proposedCircle);
+                    this.handleSpecialFilter('proposedForFunding', originalCheckbox.checked);
+                }
+            });
+        }
+        
+        if (ongoingCircle && ongoingHarborFilter) {
+            ongoingCircle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const originalCheckbox = document.getElementById('ongoingHarborFilter');
+                if (originalCheckbox) {
+                    originalCheckbox.checked = !originalCheckbox.checked;
+                    ongoingHarborFilter.checked = originalCheckbox.checked;
+                    this.updateSpecialFilterVisualState(ongoingHarborFilter, ongoingCircle);
+                    this.handleSpecialFilter('ongoingHarbor', originalCheckbox.checked);
+                }
+            });
+        }
+        
+        if (urbanCircle && urbanCentersFilter) {
+            urbanCircle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const originalCheckbox = document.getElementById('urbanCentersFilter');
+                if (originalCheckbox) {
+                    originalCheckbox.checked = !originalCheckbox.checked;
+                    urbanCentersFilter.checked = originalCheckbox.checked;
+                    this.updateSpecialFilterVisualState(urbanCentersFilter, urbanCircle);
+                    this.handleSpecialFilter('urbanCenters', originalCheckbox.checked);
+                }
+            });
+        }
     },
     
     // Setup collapsible filter sections

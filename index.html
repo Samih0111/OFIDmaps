@@ -25,8 +25,17 @@
             <!-- Map Section (Expandable) -->
             <div class="flex-1 p-4">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col" style="height: fit-content;">
-                    <div class="p-4 bg-gradient-to-r from-blue-500 to-blue-600 flex-shrink-0">
+                    <div class="p-4 bg-gradient-to-r from-blue-500 to-blue-600 flex-shrink-0 relative">
                         <h2 class="text-xl font-semibold text-white">Infrastructure Projects in the Maldives</h2>
+                        
+                        <!-- Hamburger Menu Button -->
+                        <button id="hamburgerMenuBtn" class="hamburger-menu-btn" title="Filter Projects">
+                            <div class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button>
                     </div>
                     
                     <div id="map" class="relative" style="height: 600px;">
@@ -44,14 +53,27 @@
             </div>
         </div>
 
+        <!-- Hamburger Filter Popup -->
+        <div id="hamburgerFilterPopup" class="hamburger-filter-popup">
+            <div class="hamburger-filter-content">
+                <div class="hamburger-filter-header">
+                    <h3>Filter Projects</h3>
+                    <button id="closeHamburgerFilter" class="close-popup-btn">&times;</button>
+                </div>
+                <div id="hamburgerFilterBody">
+                    <!-- Filter content will be cloned here -->
+                </div>
+            </div>
+        </div>
+
         <!-- Atoll Summary Container -->
         <div class="px-4 pb-4" id="atollSummaryContainer">
             <!-- Atoll summary component will be loaded here -->
         </div>
     </main>
 
-    <!-- Mobile Filter Toggle Button (Backup) -->
-    <button id="mobileFilterToggleBackup" style="display: none; position: fixed; bottom: 20px; right: 20px; background: #3b82f6; color: white; width: 56px; height: 56px; border-radius: 50%; border: none; font-size: 24px; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" title="Toggle Filters">
+    <!-- Mobile Filter Toggle Button (Backup) - Hidden since we have hamburger menu -->
+    <button id="mobileFilterToggleBackup" style="display: none !important;" title="Toggle Filters">
         🔧
     </button>
 
@@ -61,6 +83,7 @@
     <script src="js/filters.js"></script>
     <script src="js/statistics.js"></script>
     <script src="js/atoll-summary.js"></script>
+    <script src="js/mobile-gestures.js"></script>
     <script src="js/main.js"></script>
     
     <!-- Google Maps API -->
